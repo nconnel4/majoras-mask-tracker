@@ -1,9 +1,11 @@
+import { Inventory } from "@/features/items";
 import { AppProvider } from "@/providers/app.tsx";
+import "./App.css";
 
 function App() {
   return (
     <AppProvider>
-      <div>MM Rando</div>
+      <Inventory />
     </AppProvider>
   );
 }

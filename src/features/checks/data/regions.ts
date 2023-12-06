@@ -17,4 +17,8 @@ export const regions: Region[] = [
     id: "wct",
     name: "West Clock Town",
   },
+  {
+    id: "spi",
+    name: "Stock Pot Inn",
+  },
 ];

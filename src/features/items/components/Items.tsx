@@ -9,71 +9,52 @@ export const Items = () => {
 
   return (
     <div className="items">
-      <Item id="ocarina" active={inventory.includes("ocarina")} />
-      {!inventory.includes("heroBow2") && (
-        <Item id="heroBow" active={inventory.includes("heroBow")} />
-      )}
+      <Item id="ocarina" />
+      {!inventory.includes("heroBow2") && <Item id="heroBow" />}
       {inventory.includes("heroBow2") && !inventory.includes("heroBow3") && (
-        <Item id="heroBow2" active={true} />
+        <Item id="heroBow2" />
       )}
-      {inventory.includes("heroBow3") && <Item id={"heroBow3"} active={true} />}
-      <Item id="fireArrow" active={inventory.includes("fireArrow")} />
-      <Item id="iceArrow" active={inventory.includes("iceArrow")} />
-      <Item id="lightArrow" active={inventory.includes("lightArrow")} />
-      <Item id="moonTear" active={inventory.includes("moonTear")} />
-      {!inventory.includes("bomb2") && (
-        <Item id="bomb" active={inventory.includes("bomb")} />
-      )}
+      {inventory.includes("heroBow3") && <Item id={"heroBow3"} />}
+      <Item id="fireArrow" />
+      <Item id="iceArrow" />
+      <Item id="lightArrow" />
+      <Item id="moonTear" />
+      {!inventory.includes("bomb2") && <Item id="bomb" />}
       {inventory.includes("bomb2") && !inventory.includes("bomb3") && (
-        <Item id={"bomb2"} active={true} />
+        <Item id={"bomb2"} />
       )}
-      {inventory.includes("bomb3") && <Item id={"bomb3"} active={true} />}
-      <Item id={"bombchu"} active={inventory.includes("bombchu")} />
-      <Item id={"dekuStick"} active={inventory.includes("dekuStick")} />
-      <Item id={"dekuNut"} active={inventory.includes("dekuNut")} />
-      <Item id="magicBean" active={inventory.includes("magicBean")} />
+      {inventory.includes("bomb3") && <Item id={"bomb3"} />}
+      <Item id={"bombchu"} />
+      <Item id={"dekuStick"} />
+      <Item id={"dekuNut"} />
+      <Item id="magicBean" />
 
-      <Item id="landTitleDeed" active={inventory.includes("landTitleDeed")} />
-      <Item id="keg" active={inventory.includes("keg")} />
-      <Item id="pictographBox" active={inventory.includes("pictographBox")} />
-      <Item id="lensOfTruth" active={inventory.includes("lensOfTruth")} />
-      <Item id="hookshot" active={inventory.includes("hookshot")} />
-      <Item id="gfs" active={inventory.includes("gfs")} />
-      <Item id="swampTitleDeed" active={inventory.includes("swampTitleDeed")} />
-      <Item id="bottle1" active={inventory.includes("bottle1")} />
-      <Item id="goldDust" active={inventory.includes("goldDust")} />
-      <Item id="dekuPrincess" active={inventory.includes("dekuPrincess")} />
+      <Item id="landTitleDeed" />
+      <Item id="keg" />
+      <Item id="pictographBox" />
+      <Item id="lensOfTruth" />
+      <Item id="hookshot" />
+      <Item id="gfs" />
+      <Item id="swampTitleDeed" />
+      <Item id="bottle1" />
+      <Item id="goldDust" />
+      <Item id="dekuPrincess" />
 
-      <Item id="magic" active={inventory.includes("magic")} />
-      {!inventory.includes("wallet2") && (
-        <Item id="wallet" active={inventory.includes("wallet")} />
-      )}
-      {inventory.includes("wallet2") && <Item id={"wallet2"} active={true} />}
-      <Item
-        id="mountainTitleDeed"
-        active={inventory.includes("mountainTitleDeed")}
-      />
-      {!inventory.includes("sword2") && (
-        <Item id="sword" active={inventory.includes("sword")} />
-      )}
+      <Item id="magic" />
+      {!inventory.includes("wallet2") && <Item id="wallet" />}
+      {inventory.includes("wallet2") && <Item id={"wallet2"} />}
+      <Item id="mountainTitleDeed" />
+      {!inventory.includes("sword2") && <Item id="sword" />}
       {inventory.includes("sword2") && !inventory.includes("sword3") && (
-        <Item id="sword2" active={true} />
+        <Item id="sword2" />
       )}
-      {inventory.includes("sword3") && <Item id="sword3" active={true} />}
-      {!inventory.includes("mirrorShield") && (
-        <Item id="shield" active={inventory.includes("shield")} />
-      )}
-      {inventory.includes("mirrorShield") && (
-        <Item id={"mirrorShield"} active={true} />
-      )}
-      <Item id="roomKey" active={inventory.includes("roomKey")} />
-      <Item id="letterToKafei" active={inventory.includes("letterToKafei")} />
-      <Item id="letterToMama" active={inventory.includes("letterToMama")} />
-      <Item
-        className={"ocean-title-deed"}
-        id="oceanTitleDeed"
-        active={inventory.includes("oceanTitleDeed")}
-      />
+      {inventory.includes("sword3") && <Item id="sword3" />}
+      {!inventory.includes("mirrorShield") && <Item id="shield" />}
+      {inventory.includes("mirrorShield") && <Item id={"mirrorShield"} />}
+      <Item id="roomKey" />
+      <Item id="letterToKafei" />
+      <Item id="letterToMama" />
+      <Item id="oceanTitleDeed"></Item>
     </div>
   );
 };

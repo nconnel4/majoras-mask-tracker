@@ -1,5 +1,6 @@
 import * as React from "react";
 
+import { CheckProvider } from "@/features/checks";
 import { InventoryProvider } from "@/features/inventory";
 
 type AppProviderProps = {
@@ -7,5 +8,20 @@ type AppProviderProps = {
 };
 
 export const AppProvider = ({ children }: AppProviderProps) => {
-  return <InventoryProvider>{children}</InventoryProvider>;
+  return (
+    <CheckProvider>
+      <InventoryProvider
+        initialItems={[
+          "ocarina",
+          "sword",
+          "shield",
+          "eponaSong",
+          "dekuStick",
+          "dekuNut",
+        ]}
+      >
+        {children}
+      </InventoryProvider>
+    </CheckProvider>
+  );
 };

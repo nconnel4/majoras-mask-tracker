@@ -8,6 +8,8 @@
 .tracker {
   display: flex;
   gap: 0.5rem;
+  align-content: space-between;
+  height: 60rem;
 }
 
 .inventory {
@@ -21,8 +23,8 @@
 }
 
 .item {
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 3rem;
+  height: 3rem;
   padding: 0.5rem;
   margin: 0.25rem;
   opacity: 30%;
@@ -31,6 +33,7 @@
 
 .item img {
   object-fit: contain;
+  height: 100%;
   width: 100%;
 }
 
@@ -46,12 +49,41 @@
   right: 0;
 }
 
-.region {
+.check-list {
+  overflow-y: scroll;
+  flex-grow: 0;
+  width: 35rem;
+}
+
+.region,
+.check {
   font-size: 1.5rem;
-  border: solid 2px;
+  border: solid 0.25rem;
   border-radius: 5px;
   height: 3rem;
   padding: 0.5rem;
+  max-width: 50rem;
+  min-width: 20rem;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.check.active {
+  color: lightgreen;
+}
+
+.check.peek {
+  color: yellow;
+}
+
+.check.inactive {
+  color: lightcoral;
+}
+
+.check.complete {
+  color: dimgray;
 }
 
 .check-list button {

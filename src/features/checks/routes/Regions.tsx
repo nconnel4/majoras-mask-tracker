@@ -15,7 +15,7 @@ export const Regions = ({ setRegion }: RegionProps) => {
   return (
     <div className="check-list">
       {regions.map((region) => (
-        <button id={region.id} onClick={handleClick} className="btn">
+        <button key={region.id} id={region.id} onClick={handleClick}>
           <Region region={region} />
         </button>
       ))}

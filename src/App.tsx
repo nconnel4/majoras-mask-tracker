@@ -1,11 +1,11 @@
-import { Inventory } from "@/features/items";
+import { Tracker } from "@/pages/Tracker";
 import { AppProvider } from "@/providers/app.tsx";
 import "./App.css";
 
 function App() {
   return (
     <AppProvider>
-      <Inventory />
+      <Tracker />
     </AppProvider>
   );
 }

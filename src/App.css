@@ -5,6 +5,11 @@
   text-align: center;
 }
 
+.tracker {
+  display: flex;
+  gap: 0.5rem;
+}
+
 .inventory {
   border: 2px #747bff solid;
   border-radius: 10px;
@@ -38,5 +43,23 @@
   font-weight: bolder;
   position: absolute;
   bottom: -10px;
-  right: 0px;
+  right: 0;
+}
+
+.region {
+  font-size: 1.5rem;
+  border: solid 2px;
+  border-radius: 5px;
+  height: 3rem;
+  padding: 0.5rem;
+}
+
+.check-list button {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+button:hover {
+  color: #747bff;
 }

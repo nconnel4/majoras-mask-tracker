@@ -20,6 +20,7 @@ import letterToMama from "../assets/letterToMama.png";
 import lightArrow from "../assets/lightArrow.png";
 import magic from "../assets/magic.png";
 import magicBean from "../assets/magicBean.png";
+import mirrorShield from "../assets/mirrorShield.png";
 import moonTear from "../assets/moonTear.png";
 import mountainTitleDeed from "../assets/mountainTitleDeed.png";
 import ocarina from "../assets/ocarina.png";
@@ -207,6 +208,12 @@ export const items: Item[] = [
     name: "Hylian Shield",
     type: "item",
     image: hylianShield,
+  },
+  {
+    id: "mirrorShield",
+    name: "Mirror Shield",
+    type: "item",
+    image: mirrorShield,
   },
   {
     id: "wallet",

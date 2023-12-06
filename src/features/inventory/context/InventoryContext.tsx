@@ -37,6 +37,7 @@ const inventoryReducer = (
 ): inventoryItems => {
   switch (action.type) {
     case "toggle": {
+      // bow
       if (action.payload === "heroBow" && items.includes("heroBow")) {
         return [...items, "heroBow2"];
       }
@@ -47,6 +48,50 @@ const inventoryReducer = (
         return items.filter(
           (item) => !["heroBow", "heroBow2", "heroBow3"].includes(item),
         );
+      }
+
+      // bombs
+      if (action.payload === "bomb" && items.includes("bomb")) {
+        return [...items, "bomb2"];
+      }
+      if (action.payload === "bomb2") {
+        return [...items, "bomb3"];
+      }
+      if (action.payload === "bomb3") {
+        return items.filter(
+          (item) => !["bomb", "bomb2", "bomb3"].includes(item),
+        );
+      }
+
+      // sword
+      if (action.payload === "sword" && items.includes("sword")) {
+        return [...items, "sword2"];
+      }
+      if (action.payload === "sword2") {
+        return [...items, "sword3"];
+      }
+      if (action.payload === "sword3") {
+        return items.filter(
+          (item) => !["sword", "sword2", "sword3"].includes(item),
+        );
+      }
+
+      // shield
+      if (action.payload === "shield" && items.includes("shield")) {
+        return [...items, "mirrorShield"];
+      }
+      if (action.payload === "mirrorShield") {
+        return items.filter(
+          (item) => !["shield", "mirrorShield"].includes(item),
+        );
+      }
+
+      // wallet
+      if (action.payload === "wallet" && items.includes("wallet")) {
+        return [...items, "wallet2"];
+      }
+      if (action.payload === "wallet2") {
+        return items.filter((item) => !["wallet", "wallet2"].includes(item));
       }
 
       if (items.includes(action.payload)) {

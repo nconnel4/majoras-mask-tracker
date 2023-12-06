@@ -48,7 +48,7 @@ export const Items = () => {
       {!inventory.includes("wallet2") && (
         <Item id="wallet" active={inventory.includes("wallet")} />
       )}
-      {inventory.includes("wallet2") && <Item id={"wallet"} active={true} />}
+      {inventory.includes("wallet2") && <Item id={"wallet2"} active={true} />}
       <Item
         id="mountainTitleDeed"
         active={inventory.includes("mountainTitleDeed")}
@@ -64,7 +64,7 @@ export const Items = () => {
         <Item id="shield" active={inventory.includes("shield")} />
       )}
       {inventory.includes("mirrorShield") && (
-        <Item id={"mirroShield"} active={true} />
+        <Item id={"mirrorShield"} active={true} />
       )}
       <Item id="roomKey" active={inventory.includes("roomKey")} />
       <Item id="letterToKafei" active={inventory.includes("letterToKafei")} />

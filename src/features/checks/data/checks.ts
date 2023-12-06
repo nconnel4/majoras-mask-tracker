@@ -123,7 +123,7 @@ export const checks: Check[] = [
   {
     id: "bank2",
     name: "Bank 2",
-    requirements: [["wallet1"]],
+    requirements: [["wallet"]],
     peekRequirements: [],
   },
   {

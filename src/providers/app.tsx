@@ -11,7 +11,14 @@ export const AppProvider = ({ children }: AppProviderProps) => {
   return (
     <CheckProvider>
       <InventoryProvider
-        initialItems={["ocarina", "sword", "shield", "eponaSong"]}
+        initialItems={[
+          "ocarina",
+          "sword",
+          "shield",
+          "eponaSong",
+          "dekuStick",
+          "dekuNut",
+        ]}
       >
         {children}
       </InventoryProvider>

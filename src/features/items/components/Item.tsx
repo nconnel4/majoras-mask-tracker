@@ -8,16 +8,17 @@ import { items } from "../data/items";
 type ItemProps = {
   id: string;
   active?: boolean;
+  className?: string;
 };
 
-export const Item = ({ id, active = false }: ItemProps) => {
+export const Item = ({ id, active = false, className }: ItemProps) => {
   const item = items.find((item) => item.id === id);
   const dispatch = React.useContext(InventoryDispatchContext);
 
   if (item) {
     return (
       <div
-        className={clsx("item", { active })}
+        className={clsx("item", { active }, className)}
         onClick={() =>
           dispatch ? dispatch({ type: "toggle", payload: id }) : undefined
         }

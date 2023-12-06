@@ -10,3 +10,9 @@ export type Check = {
   requirements: string[][];
   peekRequirements?: string[][];
 };
+
+export type PlayerCheck = Check & {
+  isComplete: boolean;
+  isActive: boolean;
+  canPeek: boolean;
+};

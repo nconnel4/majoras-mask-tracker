@@ -1,12 +1,29 @@
-import { Check as CheckType } from "../types";
+import { clsx } from "clsx";
+import { useEffect, useState } from "react";
+
+import { PlayerCheck } from "@/features/checks/types";
 
 type CheckProps = {
-  check: CheckType;
+  check: PlayerCheck;
 };
 
 export const Check = ({ check }: CheckProps) => {
+  const [variant, setVariant] = useState("inactive");
+
+  useEffect(() => {
+    if (check.isComplete) {
+      setVariant("complete");
+    } else if (check.isActive) {
+      setVariant("active");
+    } else if (check.canPeek) {
+      setVariant("peek");
+    } else {
+      setVariant("inactive");
+    }
+  }, [check]);
+
   return (
-    <div className="check" id={check.id}>
+    <div className={clsx("check", variant)} id={check.id}>
       {check.name}
     </div>
   );

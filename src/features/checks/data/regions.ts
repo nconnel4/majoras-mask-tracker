@@ -21,4 +21,8 @@ export const regions: Region[] = [
     id: "spi",
     name: "Stock Pot Inn",
   },
+  {
+    id: "tf",
+    name: "Termina Field",
+  },
 ];

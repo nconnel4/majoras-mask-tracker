@@ -69,6 +69,22 @@
   align-items: center;
 }
 
+.check.active {
+  color: lightgreen;
+}
+
+.check.peek {
+  color: yellow;
+}
+
+.check.inactive {
+  color: lightcoral;
+}
+
+.check.complete {
+  color: dimgray;
+}
+
 .check-list button {
   width: 100%;
   padding: 0;

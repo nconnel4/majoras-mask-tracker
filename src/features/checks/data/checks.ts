@@ -2,6 +2,11 @@ import { Check } from "../types/index.ts";
 
 export const checks: Check[] = [
   {
+    id: "skullKidSong",
+    name: "Skull Kid Song",
+    requirements: [["heroBow"], ["dekuMask", "magic"], ["hookshot"], ["bomb"]],
+  },
+  {
     id: "clockTower",
     name: "Clock Tower Ledge",
     requirements: [],

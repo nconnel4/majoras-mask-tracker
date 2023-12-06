@@ -7,6 +7,7 @@ import { evaluateCheck } from "@/features/checks/utils/evaluateChecks.ts";
 import { InventoryContext } from "@/features/inventory";
 
 import { Check } from "../components/Check";
+import { regionChecks as regionCheckList } from "../data/regions";
 import { PlayerCheck } from "../types";
 
 type RegionChecksProps = {
@@ -30,7 +31,17 @@ export const RegionChecks = ({ region, setRegion }: RegionChecksProps) => {
   }, [region, inventory, checks, dispatch]);
 
   useEffect(() => {
-    setRegionChecks(checks.filter((check) => check.regions.includes(region)));
+    const checkList = regionCheckList[region];
+    setRegionChecks(
+      checkList.map((check) => {
+        const lookup = checks.find((c) => c.id === check);
+        if (lookup === undefined) {
+          throw new TypeError(`${check} was not found in master check list.`);
+        }
+
+        return lookup;
+      }),
+    );
   }, [region, checks, dispatch]);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {

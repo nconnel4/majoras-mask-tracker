@@ -4,44 +4,37 @@ export const checks: Check[] = [
   {
     id: "clockTower",
     name: "Clock Tower Ledge",
-    regions: ["sct"],
     requirements: [],
   },
   {
     id: "strawRoof",
     name: "Straw Roof Chest",
-    regions: ["sct"],
     requirements: [["hookshot"], ["dekuMask", "moonTear"]],
     peekRequirements: [],
   },
   {
-    id: "townDeed",
+    id: "moonTearTrade",
     name: "Moon Tear Trade",
-    regions: ["sct"],
     requirements: [["moonTear"]],
   },
   {
     id: "sctTower",
     name: "Day 3 Tower",
-    regions: ["sct"],
     requirements: [["hookshot"], ["dekuMask", "moonTear"]],
   },
   {
     id: "mailbox",
     name: "Mailbox",
-    regions: ["sct"],
     requirements: [["postmanHat"]],
   },
   {
     id: "nctTree",
     name: "North Clock Town Tree",
-    regions: ["nct"],
     requirements: [],
   },
   {
     id: "townMap",
     name: "Town Map",
-    regions: ["nct"],
     requirements: [
       ["heroBow"],
       ["dekuMask", "magic"],
@@ -53,7 +46,6 @@ export const checks: Check[] = [
   {
     id: "swampMap",
     name: "Swamp Map",
-    regions: ["nct", "rsw"],
     requirements: [
       ["heroBow"],
       ["dekuMask", "magic"],
@@ -65,7 +57,6 @@ export const checks: Check[] = [
   {
     id: "bomberKids",
     name: "Bomber's Game",
-    regions: ["nct"],
     requirements: [
       ["heroBow"],
       ["dekuMask", "magic"],
@@ -76,95 +67,80 @@ export const checks: Check[] = [
   {
     id: "keaton",
     name: "Keaton",
-    regions: ["nct"],
     requirements: [["keatonMask"]],
   },
   {
     id: "dekuPlayground",
     name: "Deku Playground",
-    regions: ["nct"],
     requirements: [["dekuMask"]],
   },
   {
     id: "oldLady",
     name: "Old Lady",
-    regions: ["nct"],
     requirements: [],
   },
   {
     id: "strayFairyHuman",
     name: "Stray Fairy Human",
-    regions: ["nct"],
     requirements: [],
   },
   {
     id: "strayFairyTransformation",
     name: "Stray Fairy Transformation",
-    regions: ["nct"],
     requirements: [["dekuMask"], ["goronMask"], ["zoraMask"]],
   },
   {
     id: "bombBag",
     name: "Bomb Bag Purchase (50r)",
-    regions: ["wct"],
     requirements: [],
   },
   {
     id: "bigBombBag",
     name: "Big Bomb Bag Purchase (90r)",
-    regions: ["wct"],
     requirements: [],
   },
   {
     id: "swordsmanSchool",
     name: "Swordsman School",
-    regions: ["wct"],
     requirements: [],
   },
   {
     id: "postman",
     name: "Postman's Game",
-    regions: ["wct"],
     requirements: [["bunnyHoodMask"]],
     peekRequirements: [],
   },
   {
     id: "bank1",
     name: "Bank 1",
-    regions: ["wct"],
     requirements: [],
   },
   {
     id: "bank2",
     name: "Bank 2",
-    regions: ["wct"],
     requirements: [["wallet1"]],
     peekRequirements: [],
   },
   {
     id: "bank3",
     name: "Bank 3",
-    regions: ["wct"],
     requirements: [["wallet2"]],
     peekRequirements: [],
   },
   {
     id: "allNightMaskPurchase",
     name: "Curiosity Shop",
-    regions: ["wct"],
     requirements: [["wallet2"]],
     peekRequirements: [],
   },
   {
     id: "rosaSisters",
     name: "Rosa Sisters",
-    regions: ["wct"],
     requirements: [["kamaroMask"]],
   },
   {
     id: "sewer",
     name: "Bomber's Hideout Sewer",
-    regions: ["ect"],
     requirements: [
       ["bomb", "hookshot"],
       ["bomb", "heroBow"],
@@ -176,55 +152,46 @@ export const checks: Check[] = [
   {
     id: "madamAroma",
     name: "Madam Aroma",
-    regions: ["ect"],
     requirements: [],
   },
   {
     id: "ectChest",
     name: "ECT Chest",
-    regions: ["ect"],
     requirements: [],
   },
   {
     id: "honeyDarling",
     name: "Honey and Darling Any Day",
-    regions: ["ect"],
     requirements: [["bomb"], ["heroBow"], ["dekuMask", "magic"]],
   },
   {
     id: "townArchery",
     name: "Town Archery",
-    regions: ["ect"],
     requirements: [["heroBow"]],
   },
   {
     id: "chestGame",
     name: "Goron Chest Game",
-    regions: ["ect"],
     requirements: [["goronMask"]],
   },
   {
     id: "mayor",
     name: "Mayor",
-    regions: ["ect"],
     requirements: [["couplesMask"]],
   },
   {
     id: "aromaBar",
     name: "Letter to Mama",
-    regions: ["ect"],
     requirements: [["letterToMama"]],
   },
   {
     id: "postmanFreedom",
     name: "Postman's Freedom",
-    regions: ["ect"],
     requirements: [["letterToMama"]],
   },
   {
     id: "soundcheck",
     name: "Soundcheck",
-    regions: ["ect"],
     requirements: [
       ["goronMask", "zoraMask", "dekuMask", "romaniMask", "ocarina"],
     ],
@@ -232,19 +199,16 @@ export const checks: Check[] = [
   {
     id: "stockPotKey",
     name: "Room Key",
-    regions: ["spi"],
     requirements: [],
   },
   {
     id: "midnightMeeting",
     name: "Midnight Meeting",
-    regions: ["spi"],
     requirements: [["kafeiMask"]],
   },
   {
     id: "toiletHand",
     name: "Toilet Hand",
-    regions: ["spi"],
     requirements: [
       ["landTitleDeed"],
       ["swampTitleDeed"],
@@ -257,25 +221,21 @@ export const checks: Check[] = [
   {
     id: "staffRoom",
     name: "Staff Room",
-    regions: ["spi"],
     requirements: [],
   },
   {
     id: "guestRoom",
     name: "Guest Room",
-    regions: ["spi"],
     requirements: [["roomKey"]],
   },
   {
     id: "grannyStories1",
     name: "Granny Short Story",
-    regions: ["spi"],
     requirements: [["allNightMask"]],
   },
   {
     id: "grannyStories2",
     name: "Granny Long Story",
-    regions: ["spi"],
     requirements: [["allNightMask"]],
   },
 ];

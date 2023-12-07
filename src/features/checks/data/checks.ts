@@ -735,4 +735,92 @@ export const checks: Check[] = [
       ["songEpona", "ocarina", "maskZora", "maskGoron", "mountainTitleDeed"],
     ],
   },
+  // Pinnacle Rock
+  {
+    id: "upperPR",
+    name: "Upper Pinnacle Rock",
+    requirements: [["songEpona", "ocarina", "maskZora"]],
+  },
+  {
+    id: "lowerPR",
+    name: "Lower Pinnacle Rock",
+    requirements: [["songEpona", "ocarina", "maskZora"]],
+  },
+  {
+    id: "seahorse",
+    name: "Seahorses",
+    requirements: [
+      ["songEpona", "ocarina", "maskZora", "pictographBox", "bottle1"],
+    ],
+  },
+  // Pirate's Fortress Exterior
+  {
+    id: "sandChest",
+    name: "Sand Chest",
+    requirements: [["songEpona", "ocarina", "maskZora"]],
+  },
+  {
+    id: "logChest",
+    name: "Log Chest",
+    requirements: [["songEpona", "ocarina", "maskZora"]],
+  },
+  {
+    id: "cornerChest",
+    name: "Corner Chest",
+    requirements: [["songEpona", "ocarina", "maskZora"]],
+  },
+  // Pirate's Fortress Sewer
+  {
+    id: "maze",
+    name: "Maze",
+    requirements: [["songEpona", "ocarina", "maskZora", "maskGoron"]],
+  },
+  {
+    id: "shallowChest",
+    name: "Shallow Chest",
+    requirements: [["songEpona", "ocarina", "maskZora", "maskGoron"]],
+  },
+  {
+    id: "deepChest",
+    name: "Deep Chest",
+    requirements: [["songEpona", "ocarina", "maskZora", "maskGoron"]],
+  },
+  {
+    id: "cage",
+    name: "Cage",
+    requirements: [["songEpona", "ocarina", "maskZora", "maskGoron"]],
+  },
+  // Pirate's Fortress Interior
+  {
+    id: "tank",
+    name: "Tank Chest",
+    requirements: [["songEpona", "ocarina", "maskZora", "hookshot"]],
+  },
+  {
+    id: "upperPF",
+    name: "Upper Pirate's Fortress",
+    requirements: [["songEpona", "ocarina", "maskZora", "hookshot"]],
+  },
+  {
+    id: "lowerPF",
+    name: "Lower Pirate's Fortress",
+    requirements: [
+      ["songEpona", "ocarina", "maskZora", "maskGoron"],
+      ["songEpona", "ocarina", "maskZora", "hookshot"],
+    ],
+  },
+  {
+    id: "hookshotChest",
+    name: "Hookshot",
+    requirements: [
+      ["songEpona", "ocarina", "maskZora", "maskGoron", "heroBow"],
+      ["songEpona", "ocarina", "maskZora", "maskGoron", "maskDeku", "magic"],
+      ["songEpona", "ocarina", "maskZora", "hookshot"],
+    ],
+  },
+  {
+    id: "guardChest",
+    name: "Guard Chest",
+    requirements: [["songEpona", "ocarina", "maskZora", "hookshot"]],
+  },
 ];

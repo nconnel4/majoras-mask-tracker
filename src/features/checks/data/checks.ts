@@ -2,9 +2,9 @@ import { Check } from "../types/index.ts";
 
 export const checks: Check[] = [
   {
-    id: "skullKidSong",
+    id: "songSkullKid",
     name: "Skull Kid Song",
-    requirements: [["heroBow"], ["dekuMask", "magic"], ["hookshot"], ["bomb"]],
+    requirements: [["heroBow"], ["maskDeku", "magic"], ["hookshot"], ["bomb"]],
   },
   {
     id: "clockTower",
@@ -14,7 +14,7 @@ export const checks: Check[] = [
   {
     id: "strawRoof",
     name: "Straw Roof Chest",
-    requirements: [["hookshot"], ["dekuMask", "moonTear"]],
+    requirements: [["hookshot"], ["maskDeku", "moonTear"]],
     peekRequirements: [],
   },
   {
@@ -25,12 +25,12 @@ export const checks: Check[] = [
   {
     id: "sctTower",
     name: "Day 3 Tower",
-    requirements: [["hookshot"], ["dekuMask", "moonTear"]],
+    requirements: [["hookshot"], ["maskDeku", "moonTear"]],
   },
   {
     id: "mailbox",
     name: "Mailbox",
-    requirements: [["postmanHat"]],
+    requirements: [["maskPostmanHat"]],
   },
   {
     id: "nctTree",
@@ -38,24 +38,24 @@ export const checks: Check[] = [
     requirements: [],
   },
   {
-    id: "townMap",
+    id: "mapTown",
     name: "Town Map",
     requirements: [
       ["heroBow"],
-      ["dekuMask", "magic"],
+      ["maskDeku", "magic"],
       ["hookshot"],
-      ["zoraMask"],
+      ["maskZora"],
     ],
     peekRequirements: [],
   },
   {
-    id: "swampMap",
+    id: "mapSwamp",
     name: "Swamp Map",
     requirements: [
       ["heroBow"],
-      ["dekuMask", "magic"],
+      ["maskDeku", "magic"],
       ["hookshot"],
-      ["zoraMask"],
+      ["maskZora"],
     ],
     peekRequirements: [],
   },
@@ -64,20 +64,20 @@ export const checks: Check[] = [
     name: "Bomber's Game",
     requirements: [
       ["heroBow"],
-      ["dekuMask", "magic"],
+      ["maskDeku", "magic"],
       ["hookshot"],
-      ["zoraMask"],
+      ["maskZora"],
     ],
   },
   {
     id: "keaton",
     name: "Keaton",
-    requirements: [["keatonMask"]],
+    requirements: [["maskKeaton"]],
   },
   {
     id: "dekuPlayground",
     name: "Deku Playground",
-    requirements: [["dekuMask"]],
+    requirements: [["maskDeku"]],
   },
   {
     id: "oldLady",
@@ -92,7 +92,7 @@ export const checks: Check[] = [
   {
     id: "strayFairyTransformation",
     name: "Stray Fairy Transformation",
-    requirements: [["dekuMask"], ["goronMask"], ["zoraMask"]],
+    requirements: [["maskDeku"], ["goronMask"], ["zoraMask"]],
   },
   {
     id: "bombBag",
@@ -149,8 +149,8 @@ export const checks: Check[] = [
     requirements: [
       ["bomb", "hookshot"],
       ["bomb", "heroBow"],
-      ["bomb", "dekuMask", "magic"],
-      ["bomb", "zoraMask"],
+      ["bomb", "maskDeku", "magic"],
+      ["bomb", "maskZora"],
     ],
     peekRequirements: [],
   },
@@ -167,7 +167,7 @@ export const checks: Check[] = [
   {
     id: "honeyDarling",
     name: "Honey and Darling Any Day",
-    requirements: [["bomb"], ["heroBow"], ["dekuMask", "magic"]],
+    requirements: [["bomb"], ["heroBow"], ["maskDeku", "magic"]],
   },
   {
     id: "townArchery",
@@ -177,12 +177,12 @@ export const checks: Check[] = [
   {
     id: "chestGame",
     name: "Goron Chest Game",
-    requirements: [["goronMask"]],
+    requirements: [["maskGoron"]],
   },
   {
     id: "mayor",
     name: "Mayor",
-    requirements: [["couplesMask"]],
+    requirements: [["maskCouples"]],
   },
   {
     id: "aromaBar",
@@ -198,7 +198,7 @@ export const checks: Check[] = [
     id: "soundcheck",
     name: "Soundcheck",
     requirements: [
-      ["goronMask", "zoraMask", "dekuMask", "romaniMask", "ocarina"],
+      ["maskGoron", "maskZora", "maskDeku", "maskRomani", "ocarina"],
     ],
   },
   {
@@ -209,7 +209,7 @@ export const checks: Check[] = [
   {
     id: "midnightMeeting",
     name: "Midnight Meeting",
-    requirements: [["kafeiMask"]],
+    requirements: [["maskKafei"]],
   },
   {
     id: "toiletHand",
@@ -236,11 +236,281 @@ export const checks: Check[] = [
   {
     id: "grannyStories1",
     name: "Granny Short Story",
-    requirements: [["allNightMask"]],
+    requirements: [["maskAllNight"]],
   },
   {
     id: "grannyStories2",
     name: "Granny Long Story",
-    requirements: [["allNightMask"]],
+    requirements: [["maskAllNight"]],
+  },
+  {
+    id: "telescope",
+    name: "Telescope",
+    requirements: [["maskDeku"], ["heroBow"], ["maskZora"], ["hookshot"]],
+    peekRequirements: [],
+  },
+  {
+    id: "dodongos",
+    name: "Dodongo Grotto",
+    requirements: [],
+  },
+  {
+    id: "pillarGrotto",
+    name: "Pillar Grotto",
+    requirements: [],
+  },
+  {
+    id: "businessScrub",
+    name: "Business Scrub",
+    requirements: [["wallet"]],
+    peekRequirements: [],
+  },
+  {
+    id: "grassChest",
+    name: "Grass Chest",
+    requirements: [],
+  },
+  {
+    id: "grassGrotto",
+    name: "Grass Grotto",
+    requirements: [],
+  },
+  {
+    id: "stump",
+    name: "Stump Chest",
+    requirements: [["hookshot"], ["magicBean", "bottle1"]],
+    peekRequirements: [],
+  },
+  {
+    id: "peahat",
+    name: "Peahat Grotto",
+    requirements: [],
+  },
+  {
+    id: "water",
+    name: "Field Underwater Chest",
+    requirements: [["maskZora"]],
+    peekRequirements: [],
+  },
+  {
+    id: "bioBaba",
+    name: "Bio Baba Grotto",
+    requirements: [
+      ["maskBlast", "maskZora"],
+      ["bomb", "maskZora"],
+      ["maskGoron", "maskZora"],
+    ],
+    peekRequirements: [
+      ["maskBlast", "maskDeku", "magic"],
+      ["maskBlast", "heroBow"],
+      ["maskBlast", "hookshot"],
+      ["bomb", "maskDeku", "magic"],
+      ["bomb", "heroBow"],
+      ["bomb", "hookshot"],
+      ["maskGoron", "maskDeku", "magic"],
+      ["maskGoron", "heroBow"],
+      ["maskGoron", "hookshot"],
+    ],
+  },
+  {
+    id: "gossips",
+    name: "Gossip Stones",
+    requirements: [
+      ["maskDeku", "songSonata", "ocarina"],
+      ["maskGoron", "songLullaby", "ocarina"],
+      ["maskZora", "songNewWave", "ocarina"],
+    ],
+  },
+  {
+    id: "kamaro",
+    name: "Kamaro",
+    requirements: [["ocarina", "songHealing"]],
+  },
+  {
+    id: "guruGuru",
+    name: "Guru Guru",
+    requirements: [],
+  },
+  {
+    id: "kafei",
+    name: "Kafei",
+    requirements: [["letterToKafei"]],
+  },
+  {
+    id: "curiosity1",
+    name: "Curiosity Shop Owner 1",
+    requirements: [["letterToKafei"]],
+  },
+  {
+    id: "curiosity2",
+    name: "Curiosity Shop Owner 2",
+    requirements: [["letterToKafei"]],
+  },
+  {
+    id: "rswGrotto",
+    name: "Grotto",
+    requirements: [],
+  },
+  {
+    id: "rswTree",
+    name: "Tree",
+    requirements: [
+      ["maskDeku", "magic"],
+      ["maskZora"],
+      ["heroBow"],
+      ["hookshot"],
+    ],
+    peekRequirements: [],
+  },
+  {
+    id: "mapSnowhead",
+    name: "Snowhead Map",
+    requirements: [
+      ["hookshot"],
+      ["heroBow"],
+      ["maskDeku", "magic"],
+      ["maskZora"],
+    ],
+  },
+  {
+    id: "swampArchery1",
+    name: "Swamp Archery 1",
+    requirements: [["heroBow"]],
+  },
+  {
+    id: "swampArchery2",
+    name: "Swamp Archery 2",
+    requirements: [["heroBow"]],
+  },
+  {
+    id: "roof",
+    name: "Tourist Center Roof",
+    requirements: [["landTitleDeed", "maskDeku"]],
+    peekRequirements: [],
+  },
+  {
+    id: "woodsGrotto",
+    name: "Woods Grotto",
+    requirements: [],
+  },
+  {
+    id: "koume",
+    name: "Koume Red Potion",
+    requirements: [],
+  },
+  {
+    id: "kotake",
+    name: "Kotake",
+    requirements: [["bottle1"]],
+  },
+  {
+    id: "swampGrotto",
+    name: "Swamp Grotto",
+    requirements: [["bottle1", "maskDeku"], ["maskZora"]],
+  },
+  {
+    id: "contest",
+    name: "Pictograph Contest",
+    requirements: [["pictographBox"]],
+  },
+  {
+    id: "landTitleDeed",
+    name: "Land Title Deed",
+    requirements: [["landTitleDeed"]],
+  },
+  {
+    id: "boatArchery",
+    name: "Boat Archery",
+    requirements: [["heroBow", "maskDeku", "songSonata", "ocarina"]],
+  },
+  {
+    id: "swampSpider",
+    name: "Swamp Spider House",
+    requirements: [
+      ["bottle1", "maskDeku", "hookshot"],
+      ["maskZora", "bottle1"],
+      ["bottle1", "maskDeku", "magic", "magicBean", "maskGoron"],
+      ["bottle1", "maskDeku", "magic", "magicBean", "bomb"],
+      ["bottle1", "maskDeku", "magic", "magicBean", "blastMask"],
+      ["bottle1", "maskDeku", "magicBean", "heroBow"],
+    ],
+  },
+  {
+    id: "garden",
+    name: "Palace Garden",
+    requirements: [
+      ["maskDeku", "bottle1"],
+      ["maskDeku", "heroBow"],
+      ["maskDeku", "hookshot"],
+      ["maskDeku", "maskZora"],
+    ],
+  },
+  {
+    id: "beanGrotto",
+    name: "Bean Grotto",
+    requirements: [
+      ["maskDeku", "bottle1", "magicBean"],
+      ["maskDeku", "hookshot"],
+    ],
+  },
+  {
+    id: "beanSalesman",
+    name: "Bean Salesman",
+    requirements: [
+      ["maskDeku", "bottle1"],
+      ["maskDeku", "heroBow"],
+      ["maskDeku", "hookshot"],
+      ["maskDeku", "maskZora"],
+    ],
+  },
+  {
+    id: "butler",
+    name: "Deku Butler",
+    requirements: [
+      ["maskDeku", "maskZora", "dekuPrincess"],
+      ["maskDeku", "hookshot", "dekuPrincess"],
+      ["maskDeku", "heroBow", "dekuPrincess"],
+      ["maskDeku", "bottle1", "dekuPrincess"],
+    ],
+  },
+  {
+    id: "songPalace",
+    name: "Palace Song",
+    requirements: [
+      ["maskDeku", "bottle1"],
+      ["maskDeku", "heroBow"],
+      ["maskDeku", "hookshot"],
+      ["maskDeku", "maskZora"],
+    ],
+  },
+  {
+    id: "wfEntrance",
+    name: "Woodfall Entrance",
+    requirements: [
+      ["maskDeku", "bottle1"],
+      ["maskDeku", "heroBow"],
+      ["maskDeku", "hookshot"],
+      ["maskDeku", "maskZora"],
+    ],
+  },
+  {
+    id: "wfBridge",
+    name: "Woodfall Bridge",
+    requirements: [
+      ["maskDeku", "bottle1"],
+      ["maskDeku", "heroBow"],
+      ["maskDeku", "hookshot"],
+      ["maskDeku", "maskZora"],
+    ],
+  },
+  {
+    id: "wfOwl",
+    name: "Woodfall Owl",
+    requirements: [
+      ["maskDeku", "bottle1"],
+      ["maskDeku", "heroBow"],
+      ["maskDeku", "hookshot"],
+      ["maskDeku", "maskZora"],
+    ],
   },
 ];

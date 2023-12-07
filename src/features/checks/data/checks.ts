@@ -2,7 +2,7 @@ import { Check } from "../types/index.ts";
 
 export const checks: Check[] = [
   {
-    id: "skullKidSong",
+    id: "songSkullKid",
     name: "Skull Kid Song",
     requirements: [["heroBow"], ["maskDeku", "magic"], ["hookshot"], ["bomb"]],
   },
@@ -476,6 +476,36 @@ export const checks: Check[] = [
   {
     id: "songPalace",
     name: "Palace Song",
+    requirements: [
+      ["maskDeku", "bottle1"],
+      ["maskDeku", "heroBow"],
+      ["maskDeku", "hookshot"],
+      ["maskDeku", "maskZora"],
+    ],
+  },
+  {
+    id: "wfEntrance",
+    name: "Woodfall Entrance",
+    requirements: [
+      ["maskDeku", "bottle1"],
+      ["maskDeku", "heroBow"],
+      ["maskDeku", "hookshot"],
+      ["maskDeku", "maskZora"],
+    ],
+  },
+  {
+    id: "wfBridge",
+    name: "Woodfall Bridge",
+    requirements: [
+      ["maskDeku", "bottle1"],
+      ["maskDeku", "heroBow"],
+      ["maskDeku", "hookshot"],
+      ["maskDeku", "maskZora"],
+    ],
+  },
+  {
+    id: "wfOwl",
+    name: "Woodfall Owl",
     requirements: [
       ["maskDeku", "bottle1"],
       ["maskDeku", "heroBow"],

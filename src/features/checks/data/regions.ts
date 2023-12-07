@@ -149,7 +149,7 @@ export const regions: Region[] = [
 ];
 
 export const regionChecks: RegionChecks = {
-  ctr: ["skullKidSong"],
+  ctr: ["songSkullKid"],
   sct: ["clockTower", "strawRoof", "moonTearTrade", "sctTower", "mailbox"],
   nct: [
     "nctTree",
@@ -226,11 +226,11 @@ export const regionChecks: RegionChecks = {
     "swampGrotto",
     "contest",
     "landTitleDeed",
-    "boachArchery",
+    "boatArchery",
     "swampSpider",
   ],
   pal: ["garden", "beanGrotto", "beanSalesman", "butler", "songPalace"],
-  wf: [],
+  wf: ["wfEntrance", "wfBridge", "wfOwl"],
   mr: [],
   rr: [],
   vil: [],

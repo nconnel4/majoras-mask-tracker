@@ -85,6 +85,7 @@
 .check {
   font-size: 1.25rem;
   justify-content: start;
+  position: relative;
 }
 
 .check.active {
@@ -101,6 +102,12 @@
 
 .check.complete {
   color: dimgray;
+}
+
+.song-icon {
+  position: absolute;
+  right: 10px;
+  font-size: 1.75rem;
 }
 
 .check-list button {
@@ -130,12 +137,13 @@ button:hover {
   width: 1.5rem;
   height: 1.5rem;
   position: absolute;
-  border: solid slategrey 0.15rem;
+  border: solid #1a1a1a 0.15rem;
   border-radius: 0.25rem;
   padding: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 5px 2px 2px #1a1a1a;
 }
 
 .marker span {
@@ -225,4 +233,9 @@ button:hover {
 #marker-pal {
   top: 55%;
   left: 50%;
+}
+
+#marker-wf {
+  top: 53%;
+  left: 56%;
 }

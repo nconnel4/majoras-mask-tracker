@@ -1,3 +1,5 @@
+import { faMusic } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { clsx } from "clsx";
 import { useEffect, useState } from "react";
 
@@ -25,6 +27,9 @@ export const Check = ({ check }: CheckProps) => {
   return (
     <div className={clsx("check", variant)} id={check.id}>
       {check.name}
+      {check.id.startsWith("song") && (
+        <FontAwesomeIcon className={"song-icon"} icon={faMusic} />
+      )}
     </div>
   );
 };

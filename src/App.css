@@ -114,6 +114,7 @@ button:hover {
 }
 
 .map {
+  /*noinspection CssUnknownTarget*/
   background-image: url("/overworld.png");
   background-repeat: no-repeat;
   background-position: top;
@@ -214,4 +215,14 @@ button:hover {
 #marker-rr {
   top: 40%;
   left: 46%;
+}
+
+#marker-ssw {
+  top: 50%;
+  left: 65%;
+}
+
+#marker-pal {
+  top: 55%;
+  left: 50%;
 }

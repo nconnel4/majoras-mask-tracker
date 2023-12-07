@@ -382,4 +382,105 @@ export const checks: Check[] = [
     name: "Swamp Archery 2",
     requirements: [["heroBow"]],
   },
+  {
+    id: "roof",
+    name: "Tourist Center Roof",
+    requirements: [["landTitleDeed", "maskDeku"]],
+    peekRequirements: [],
+  },
+  {
+    id: "woodsGrotto",
+    name: "Woods Grotto",
+    requirements: [],
+  },
+  {
+    id: "koume",
+    name: "Koume Red Potion",
+    requirements: [],
+  },
+  {
+    id: "kotake",
+    name: "Kotake",
+    requirements: [["bottle1"]],
+  },
+  {
+    id: "swampGrotto",
+    name: "Swamp Grotto",
+    requirements: [["bottle1", "maskDeku"], ["maskZora"]],
+  },
+  {
+    id: "contest",
+    name: "Pictograph Contest",
+    requirements: [["pictographBox"]],
+  },
+  {
+    id: "landTitleDeed",
+    name: "Land Title Deed",
+    requirements: [["landTitleDeed"]],
+  },
+  {
+    id: "boatArchery",
+    name: "Boat Archery",
+    requirements: [["heroBow", "maskDeku", "songSonata", "ocarina"]],
+  },
+  {
+    id: "swampSpider",
+    name: "Swamp Spider House",
+    requirements: [
+      ["bottle1", "maskDeku", "hookshot"],
+      ["maskZora", "bottle1"],
+      ["bottle1", "maskDeku", "magic", "magicBean", "maskGoron"],
+      ["bottle1", "maskDeku", "magic", "magicBean", "bomb"],
+      ["bottle1", "maskDeku", "magic", "magicBean", "blastMask"],
+      ["bottle1", "maskDeku", "magicBean", "heroBow"],
+    ],
+  },
+  {
+    id: "garden",
+    name: "Palace Garden",
+    requirements: [
+      ["maskDeku", "bottle1"],
+      ["maskDeku", "heroBow"],
+      ["maskDeku", "hookshot"],
+      ["maskDeku", "maskZora"],
+    ],
+  },
+  {
+    id: "beanGrotto",
+    name: "Bean Grotto",
+    requirements: [
+      ["maskDeku", "bottle1", "magicBean"],
+      ["maskDeku", "hookshot"],
+    ],
+  },
+  {
+    id: "beanSalesman",
+    name: "Bean Salesman",
+    requirements: [
+      ["maskDeku", "bottle1"],
+      ["maskDeku", "heroBow"],
+      ["maskDeku", "hookshot"],
+      ["maskDeku", "maskZora"],
+    ],
+  },
+  {
+    id: "butler",
+    name: "Deku Butler",
+    requirements: [
+      ["maskDeku", "maskZora", "dekuPrincess"],
+      ["maskDeku", "hookshot", "dekuPrincess"],
+      ["maskDeku", "heroBow", "dekuPrincess"],
+      ["maskDeku", "bottle1", "dekuPrincess"],
+    ],
+  },
+  {
+    id: "songPalace",
+    name: "Palace Song",
+    requirements: [
+      ["maskDeku", "bottle1"],
+      ["maskDeku", "heroBow"],
+      ["maskDeku", "hookshot"],
+      ["maskDeku", "maskZora"],
+    ],
+  },
 ];

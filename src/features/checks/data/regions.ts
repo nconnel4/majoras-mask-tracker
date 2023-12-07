@@ -102,6 +102,50 @@ export const regions: Region[] = [
     id: "pr",
     name: "Pinnacle Rock",
   },
+  {
+    id: "rik",
+    name: "Road to Ikana",
+  },
+  {
+    id: "gy",
+    name: "Graveyard",
+  },
+  {
+    id: "can",
+    name: "Canyon",
+  },
+  {
+    id: "shr",
+    name: "Secret Shrine",
+  },
+  {
+    id: "well",
+    name: "Well",
+  },
+  {
+    id: "cas",
+    name: "Ikana Castle",
+  },
+  {
+    id: "st",
+    name: "Stone Tower",
+  },
+  {
+    id: "wft",
+    name: "Woodfall Temple",
+  },
+  {
+    id: "sht",
+    name: "Stonehead Temple",
+  },
+  {
+    id: "gbt",
+    name: "Great Bay Temple",
+  },
+  {
+    id: "stt",
+    name: "Stone Tower Temple",
+  },
 ];
 
 export const regionChecks: RegionChecks = {
@@ -190,4 +234,15 @@ export const regionChecks: RegionChecks = {
   pfi: [],
   pfs: [],
   pr: [],
+  rik: [],
+  gy: [],
+  can: [],
+  shr: [],
+  well: [],
+  cas: [],
+  st: [],
+  wft: [],
+  sht: [],
+  gbt: [],
+  stt: [],
 };

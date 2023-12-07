@@ -1,18 +1,36 @@
+import allNightMask from "../assets/allNightMask.png";
+import blastMask from "../assets/blastMask.png";
 import bomb from "../assets/bomb.png";
 import bombchu from "../assets/bombchu.png";
 import bottle from "../assets/bottle.png";
 import heroBow from "../assets/bow.png";
+import maskBremen from "../assets/bremenMask.png";
+import maskBunnyHood from "../assets/bunnyHood.png";
+import maskCaptainHat from "../assets/captainHat.png";
+import maskCircusLeader from "../assets/circusLeaderMask.png";
+import maskCouples from "../assets/coupleMask.png";
+import dekuMask from "../assets/dekuMask.png";
 import dekuNut from "../assets/dekuNut.png";
 import dekuPrincess from "../assets/dekuPrincess.png";
 import dekuStick from "../assets/dekuStick.png";
+import maskDonGero from "../assets/donGeroMask.png";
+import maskFierceDeity from "../assets/fierceDeityMask.png";
 import fireArrow from "../assets/fireArrow.png";
+import maskGaro from "../assets/garoMask.png";
+import maskGiant from "../assets/giantMask.png";
+import maskGibdo from "../assets/gibdoMask.png";
 import gildedSword from "../assets/gildedSword.png";
 import goldDust from "../assets/goldDust.png";
+import maskGoron from "../assets/goronMask.png";
+import greatFairyMask from "../assets/greatFairyMask.png";
 import gfs from "../assets/greatFairySword.png";
 import hookshot from "../assets/hookshot.png";
 import hylianShield from "../assets/hylianShield.png";
 import iceArrow from "../assets/iceArrow.png";
 import letterToKafei from "../assets/kafeiLetter.png";
+import maskKafei from "../assets/kafeiMask.png";
+import maskKamaro from "../assets/kamaroMask.png";
+import keatonMask from "../assets/keatonMask.png";
 import kokiriSword from "../assets/kokiriSword.png";
 import landTitleDeed from "../assets/landTitleDeed.png";
 import lensOfTruth from "../assets/lensOfTruth.png";
@@ -20,17 +38,23 @@ import letterToMama from "../assets/letterToMama.png";
 import lightArrow from "../assets/lightArrow.png";
 import magic from "../assets/magic.png";
 import magicBean from "../assets/magicBean.png";
+import maskScents from "../assets/maskOfScents.png";
+import maskTruth from "../assets/maskOfTruth.png";
 import mirrorShield from "../assets/mirrorShield.png";
 import moonTear from "../assets/moonTear.png";
 import mountainTitleDeed from "../assets/mountainTitleDeed.png";
 import ocarina from "../assets/ocarina.png";
 import oceanTitleDeed from "../assets/oceanTitleDeed.png";
 import pictograph from "../assets/pictographBox.png";
+import postmanHat from "../assets/postmanHat.png";
 import keg from "../assets/powderKeg.png";
 import razorSword from "../assets/razorSword.png";
+import maskRomani from "../assets/romaniMask.png";
 import roomKey from "../assets/roomKey.png";
+import stoneMask from "../assets/stoneMask.png";
 import swampTitleDeed from "../assets/swampTitleDeed.png";
 import wallet from "../assets/wallet.png";
+import maskZora from "../assets/zoraMask.png";
 import { Item } from "../types";
 
 export const items: Item[] = [
@@ -270,5 +294,149 @@ export const items: Item[] = [
     name: "Bombchu",
     type: "item",
     image: bombchu,
+  },
+  {
+    id: "maskPostmanHat",
+    name: "Postman's Hat",
+    type: "mask",
+    image: postmanHat,
+  },
+  {
+    id: "maskBlast",
+    name: "Blast Mask",
+    type: "mask",
+    image: blastMask,
+  },
+  {
+    id: "maskAllNight",
+    name: "All Night Mask",
+    type: "mask",
+    image: allNightMask,
+  },
+  {
+    id: "maskStone",
+    name: "Stone Mask",
+    type: "mask",
+    image: stoneMask,
+  },
+  {
+    id: "maskGreatFairy",
+    name: "Great Fairy Mask",
+    type: "mask",
+    image: greatFairyMask,
+  },
+  {
+    id: "maskDeku",
+    name: "Deku Mask",
+    type: "mask",
+    image: dekuMask,
+  },
+  {
+    id: "maskKeaton",
+    name: "Keaton Mask",
+    type: "mask",
+    image: keatonMask,
+  },
+  {
+    id: "maskBremen",
+    name: "Bremen Mask",
+    type: "mask",
+    image: maskBremen,
+  },
+  {
+    id: "maskBunnyHood",
+    name: "Bunny Hood",
+    type: "mask",
+    image: maskBunnyHood,
+  },
+  {
+    id: "maskDonGero",
+    name: "Don Gero's Mask",
+    type: "mask",
+    image: maskDonGero,
+  },
+  {
+    id: "maskScents",
+    name: "Mask of Scents",
+    type: "mask",
+    image: maskScents,
+  },
+  {
+    id: "maskGoron",
+    name: "Goron Mask",
+    type: "mask",
+    image: maskGoron,
+  },
+  {
+    id: "maskRomani",
+    name: "Romani's Mask",
+    type: "mask",
+    image: maskRomani,
+  },
+  {
+    id: "maskCircusLeader",
+    name: "Circus Leader's Mask",
+    type: "mask",
+    image: maskCircusLeader,
+  },
+  {
+    id: "maskKafei",
+    name: "Kafei Mask",
+    type: "mask",
+    image: maskKafei,
+  },
+  {
+    id: "maskCouples",
+    name: "Couple's Mask",
+    type: "mask",
+    image: maskCouples,
+  },
+  {
+    id: "maskTruth",
+    name: "Mask of Truth",
+    type: "mask",
+    image: maskTruth,
+  },
+  {
+    id: "maskZora",
+    name: "Zora Mask",
+    type: "mask",
+    image: maskZora,
+  },
+  {
+    id: "maskKamaro",
+    name: "Kamaro Mask",
+    type: "mask",
+    image: maskKamaro,
+  },
+  {
+    id: "maskGibdo",
+    name: "Gibdo Mask",
+    type: "mask",
+    image: maskGibdo,
+  },
+  {
+    id: "maskGaro",
+    name: "Garo Mask",
+    type: "mask",
+    image: maskGaro,
+  },
+  {
+    id: "maskCaptainHat",
+    name: "Captain's Hat",
+    type: "mask",
+    image: maskCaptainHat,
+  },
+  {
+    id: "maskGiant",
+    name: "Giant's Mask",
+    type: "mask",
+    image: maskGiant,
+  },
+  {
+    id: "maskFierceDeity",
+    name: "FierceDeity",
+    type: "mask",
+    image: maskFierceDeity,
   },
 ];

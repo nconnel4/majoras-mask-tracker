@@ -17,9 +17,11 @@
   border-radius: 10px;
 }
 
-.items {
+.items,
+.masks {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+  margin-bottom: 2rem;
 }
 
 .item {
@@ -37,7 +39,7 @@
   width: 100%;
 }
 
-.item.active {
+.item.in-inventory {
   opacity: 100%;
 }
 

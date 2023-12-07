@@ -639,4 +639,38 @@ export const checks: Check[] = [
       ["blastMask", "hookshot", "heroBow"],
     ],
   },
+  // Zora Cape
+  {
+    id: "ledge1",
+    name: "Lower Cape Ledge",
+    requirements: [["hookshot"]],
+    peekRequirements: [],
+  },
+  {
+    id: "ledge2",
+    name: "Upper Cape Ledge",
+    requirements: [["hookshot"]],
+  },
+  {
+    id: "beaver",
+    name: "Beaver Race",
+    requirements: [["hookshot", "maskZora"]],
+  },
+  {
+    id: "likeLike",
+    name: "Like Like",
+    requirements: [["maskZora"]],
+    peekRequirements: [["heroBow"]],
+  },
+  {
+    id: "capeGrotto",
+    name: "Cape Grotto",
+    requirements: [["bomb"], ["maskBlast"], ["maskGoron"]],
+  },
+  {
+    id: "capeUnderwater",
+    name: "Underwater Chest",
+    requirements: [["maskZora"]],
+    peekRequirements: [],
+  },
 ];

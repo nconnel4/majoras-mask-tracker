@@ -239,3 +239,38 @@ button:hover {
   top: 53%;
   left: 56%;
 }
+
+#marker-gbc {
+  top: 35%;
+  left: 28%;
+}
+
+#marker-zc {
+  top: 40%;
+  left: 28%;
+}
+
+#marker-zh {
+  top: 41%;
+  left: 21%;
+}
+
+#marker-pfe {
+  top: 26%;
+  left: 29%;
+}
+
+#marker-pfi {
+  top: 22%;
+  left: 30%;
+}
+
+#marker-pfs {
+  top: 24%;
+  left: 33%;
+}
+
+#marker-pr {
+  top: 30%;
+  left: 14%;
+}

@@ -33,6 +33,7 @@
   margin: 0.2rem;
   opacity: 30%;
   position: relative;
+  user-select: none;
 }
 
 .item img {
@@ -66,7 +67,6 @@
 
 .region,
 .check {
-  font-size: 1.5rem;
   border: solid 0.25rem;
   border-radius: 5px;
   height: 3rem;
@@ -74,9 +74,17 @@
   max-width: 50rem;
   font-weight: bolder;
   display: flex;
-  justify-content: center;
   align-items: center;
-  /*width: 100%;*/
+}
+
+.region {
+  font-size: 1.5rem;
+  justify-content: center;
+}
+
+.check {
+  font-size: 1.25rem;
+  justify-content: start;
 }
 
 .check.active {

@@ -26,7 +26,7 @@ export const evaluateCheck = (
     }
 
     for (let i = 0; i < _check.peekRequirements.length; i++) {
-      const requirements = _check.requirements[i];
+      const requirements = _check.peekRequirements[i];
       _check.canPeek = requirements.every((requirement) =>
         inventory.includes(requirement),
       );

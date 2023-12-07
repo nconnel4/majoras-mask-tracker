@@ -121,7 +121,7 @@ button:hover {
   width: 1.5rem;
   height: 1.5rem;
   position: absolute;
-  border: solid white 0.15rem;
+  border: solid slategrey 0.15rem;
   border-radius: 0.25rem;
   padding: 0.5rem;
   display: flex;
@@ -147,7 +147,7 @@ button:hover {
 }
 
 .marker.clear {
-  background: gray;
+  background: grey;
 }
 
 .marker.hidden {

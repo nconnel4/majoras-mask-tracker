@@ -92,7 +92,7 @@ export const checks: Check[] = [
   {
     id: "strayFairyTransformation",
     name: "Stray Fairy Transformation",
-    requirements: [["maskDeku"], ["goronMask"], ["zoraMask"]],
+    requirements: [["maskDeku"], ["maskGoron"], ["maskZora"]],
   },
   {
     id: "bombBag",
@@ -151,6 +151,10 @@ export const checks: Check[] = [
       ["bomb", "heroBow"],
       ["bomb", "maskDeku", "magic"],
       ["bomb", "maskZora"],
+      ["maskBlast", "hookshot"],
+      ["maskBlast", "heroBow"],
+      ["maskBlast", "maskDeku", "magic"],
+      ["maskBlast", "maskZora"],
     ],
     peekRequirements: [],
   },
@@ -431,7 +435,7 @@ export const checks: Check[] = [
       ["maskZora", "bottle1"],
       ["bottle1", "maskDeku", "magic", "magicBean", "maskGoron"],
       ["bottle1", "maskDeku", "magic", "magicBean", "bomb"],
-      ["bottle1", "maskDeku", "magic", "magicBean", "blastMask"],
+      ["bottle1", "maskDeku", "magic", "magicBean", "maskBlast"],
       ["bottle1", "maskDeku", "magicBean", "heroBow"],
     ],
   },
@@ -511,6 +515,128 @@ export const checks: Check[] = [
       ["maskDeku", "heroBow"],
       ["maskDeku", "hookshot"],
       ["maskDeku", "maskZora"],
+    ],
+  },
+  {
+    id: "mapRanch",
+    name: "Ranch Map",
+    requirements: [
+      ["maskDeku", "magic"],
+      ["maskZora"],
+      ["heroBow"],
+      ["hookshot"],
+    ],
+  },
+  {
+    id: "mapBay",
+    name: "Great Bay Map",
+    requirements: [
+      ["maskDeku", "magic"],
+      ["maskZora"],
+      ["heroBow"],
+      ["hookshot"],
+    ],
+  },
+  {
+    id: "gormanRace",
+    name: "Gorman Race",
+    requirements: [["ocarina", "songEpona"]],
+  },
+  {
+    id: "dogChest",
+    name: "Dog Race Chest",
+    requirements: [["magicBean", "bottle1"], ["maskZora"], ["hookshot"]],
+    peekRequirements: [],
+  },
+  {
+    id: "dogRace",
+    name: "Dog Race",
+    requirements: [["maskTruth"]],
+  },
+  {
+    id: "chicks",
+    name: "Grog's Chickens",
+    requirements: [["maskBremen"]],
+  },
+  {
+    id: "aliens",
+    name: "Aliens",
+    requirements: [["maskGoron", "keg", "heroBow"]],
+  },
+  {
+    id: "cremia",
+    name: "Cremia Escort",
+    requirements: [["maskGoron", "keg", "heroBow"]],
+  },
+  {
+    id: "songRomaniGame",
+    name: "Romani's Game",
+    requirements: [["maskGoron", "keg"]],
+  },
+  // Great Bay Coast
+  {
+    id: "coastGrotto",
+    name: "Coast Grotto",
+    requirements: [["songEpona", "ocarina"]],
+  },
+  {
+    id: "labFish",
+    name: "Lab Fish",
+    requirements: [["songEpona", "ocarina", "bottle1"]],
+  },
+  {
+    id: "mapCanyon",
+    name: "Ikana Canyon Map",
+    requirements: [["songEpona", "ocarina", "bottle1"]],
+  },
+  {
+    id: "coastLedge",
+    name: "Coast Ledge",
+    requirements: [
+      ["songEpona", "ocarina", "bottle1", "magicBean", "hookshot"],
+    ],
+    peekRequirements: [["songEpona", "ocarina"]],
+  },
+  {
+    id: "mikau",
+    name: "Mikau",
+    requirements: [["songEpona", "ocarina", "songHealing"]],
+  },
+  {
+    id: "fisherman",
+    name: "Fisherman Game",
+    requirements: [
+      [
+        "songEpona",
+        "ocarina",
+        "hookshot",
+        "maskZora",
+        "iceArrow",
+        "fireArrow",
+        "songNewWave",
+        "magic",
+        "heroBow",
+      ],
+    ],
+  },
+  {
+    id: "oceanSpider",
+    name: "Ocean Spider House Day 1",
+    requirements: [
+      ["bomb", "hookshot", "heroBow", "fireArrow", "magic"],
+      ["maskBlast", "hookshot", "heroBow", "fireArrow", "magic"],
+    ],
+  },
+  {
+    id: "oceanSpiderChest",
+    name: "Ocean Spider House Chest",
+    requirements: [
+      ["bomb", "hookshot", "heroBow", "maskCaptainHat"],
+      ["blastMask", "hookshot", "heroBow", "maskCaptainHat"],
+    ],
+    peekRequirements: [
+      ["bomb", "hookshot", "heroBow"],
+      ["blastMask", "hookshot", "heroBow"],
     ],
   },
 ];

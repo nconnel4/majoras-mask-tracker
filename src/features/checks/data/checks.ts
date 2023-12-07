@@ -623,54 +623,116 @@ export const checks: Check[] = [
     id: "oceanSpider",
     name: "Ocean Spider House Day 1",
     requirements: [
-      ["bomb", "hookshot", "heroBow", "fireArrow", "magic"],
-      ["maskBlast", "hookshot", "heroBow", "fireArrow", "magic"],
+      [
+        "songEpona",
+        "ocarina",
+        "bomb",
+        "hookshot",
+        "heroBow",
+        "fireArrow",
+        "magic",
+      ],
+      [
+        "songEpona",
+        "ocarina",
+        "maskBlast",
+        "hookshot",
+        "heroBow",
+        "fireArrow",
+        "magic",
+      ],
     ],
   },
   {
     id: "oceanSpiderChest",
     name: "Ocean Spider House Chest",
     requirements: [
-      ["bomb", "hookshot", "heroBow", "maskCaptainHat"],
-      ["blastMask", "hookshot", "heroBow", "maskCaptainHat"],
+      ["songEpona", "ocarina", "bomb", "hookshot", "heroBow", "maskCaptainHat"],
+      [
+        "songEpona",
+        "ocarina",
+        "blastMask",
+        "hookshot",
+        "heroBow",
+        "maskCaptainHat",
+      ],
     ],
     peekRequirements: [
-      ["bomb", "hookshot", "heroBow"],
-      ["blastMask", "hookshot", "heroBow"],
+      ["songEpona", "ocarina", "bomb", "hookshot", "heroBow"],
+      ["songEpona", "ocarina", "blastMask", "hookshot", "heroBow"],
     ],
   },
   // Zora Cape
   {
     id: "ledge1",
     name: "Lower Cape Ledge",
-    requirements: [["hookshot"]],
-    peekRequirements: [],
+    requirements: [["songEpona", "ocarina", "hookshot"]],
+    peekRequirements: [["songEpona", "ocarina"]],
   },
   {
     id: "ledge2",
     name: "Upper Cape Ledge",
-    requirements: [["hookshot"]],
+    requirements: [["songEpona", "ocarina", "hookshot"]],
   },
   {
     id: "beaver",
     name: "Beaver Race",
-    requirements: [["hookshot", "maskZora"]],
+    requirements: [["songEpona", "ocarina", "hookshot", "maskZora"]],
   },
   {
     id: "likeLike",
     name: "Like Like",
-    requirements: [["maskZora"]],
-    peekRequirements: [["heroBow"]],
+    requirements: [["songEpona", "ocarina", "maskZora"]],
+    peekRequirements: [["songEpona", "ocarina", "heroBow"]],
   },
   {
     id: "capeGrotto",
     name: "Cape Grotto",
-    requirements: [["bomb"], ["maskBlast"], ["maskGoron"]],
+    requirements: [
+      ["songEpona", "ocarina", "bomb"],
+      ["songEpona", "ocarina", "maskBlast"],
+      ["songEpona", "ocarina", "maskGoron"],
+    ],
   },
   {
-    id: "capeUnderwater",
+    id: "capeWater",
     name: "Underwater Chest",
-    requirements: [["maskZora"]],
-    peekRequirements: [],
+    requirements: [["songEpona", "ocarina", "maskZora"]],
+    peekRequirements: [["songEpona", "ocarina"]],
+  },
+  // Zora Hall
+  {
+    id: "torches",
+    name: "Stage Lights",
+    requirements: [
+      ["songEpona", "ocarina", "maskZora", "heroBow", "fireArrow", "magic"],
+    ],
+  },
+  {
+    id: "evan",
+    name: "Evan (> > v A A V > A < < > V V > < V)",
+    requirements: [["songEpona", "ocarina", "maskZora"]],
+  },
+  {
+    id: "luluLedge",
+    name: "Lulu Ledge",
+    requirements: [
+      [
+        "songEpona",
+        "ocarina",
+        "maskZora",
+        "maskGoron",
+        "maskDeku",
+        "mountainTitleDeed",
+      ],
+    ],
+    peekRequirements: [["songEpona", "ocarina", "maskZora"]],
+  },
+  {
+    id: "mountainTitleDeed",
+    name: "Mountain Title Deed",
+    requirements: [
+      ["songEpona", "ocarina", "maskZora", "maskGoron", "mountainTitleDeed"],
+    ],
   },
 ];

@@ -4,7 +4,7 @@ export const checks: Check[] = [
   {
     id: "skullKidSong",
     name: "Skull Kid Song",
-    requirements: [["heroBow"], ["dekuMask", "magic"], ["hookshot"], ["bomb"]],
+    requirements: [["heroBow"], ["maskDeku", "magic"], ["hookshot"], ["bomb"]],
   },
   {
     id: "clockTower",
@@ -14,7 +14,7 @@ export const checks: Check[] = [
   {
     id: "strawRoof",
     name: "Straw Roof Chest",
-    requirements: [["hookshot"], ["dekuMask", "moonTear"]],
+    requirements: [["hookshot"], ["maskDeku", "moonTear"]],
     peekRequirements: [],
   },
   {
@@ -25,12 +25,12 @@ export const checks: Check[] = [
   {
     id: "sctTower",
     name: "Day 3 Tower",
-    requirements: [["hookshot"], ["dekuMask", "moonTear"]],
+    requirements: [["hookshot"], ["maskDeku", "moonTear"]],
   },
   {
     id: "mailbox",
     name: "Mailbox",
-    requirements: [["postmanHat"]],
+    requirements: [["maskPostmanHat"]],
   },
   {
     id: "nctTree",
@@ -42,9 +42,9 @@ export const checks: Check[] = [
     name: "Town Map",
     requirements: [
       ["heroBow"],
-      ["dekuMask", "magic"],
+      ["maskDeku", "magic"],
       ["hookshot"],
-      ["zoraMask"],
+      ["maskZora"],
     ],
     peekRequirements: [],
   },
@@ -53,9 +53,9 @@ export const checks: Check[] = [
     name: "Swamp Map",
     requirements: [
       ["heroBow"],
-      ["dekuMask", "magic"],
+      ["maskDeku", "magic"],
       ["hookshot"],
-      ["zoraMask"],
+      ["maskZora"],
     ],
     peekRequirements: [],
   },
@@ -64,20 +64,20 @@ export const checks: Check[] = [
     name: "Bomber's Game",
     requirements: [
       ["heroBow"],
-      ["dekuMask", "magic"],
+      ["maskDeku", "magic"],
       ["hookshot"],
-      ["zoraMask"],
+      ["maskZora"],
     ],
   },
   {
     id: "keaton",
     name: "Keaton",
-    requirements: [["keatonMask"]],
+    requirements: [["maskKeaton"]],
   },
   {
     id: "dekuPlayground",
     name: "Deku Playground",
-    requirements: [["dekuMask"]],
+    requirements: [["maskDeku"]],
   },
   {
     id: "oldLady",
@@ -92,7 +92,7 @@ export const checks: Check[] = [
   {
     id: "strayFairyTransformation",
     name: "Stray Fairy Transformation",
-    requirements: [["dekuMask"], ["goronMask"], ["zoraMask"]],
+    requirements: [["maskDeku"], ["goronMask"], ["zoraMask"]],
   },
   {
     id: "bombBag",
@@ -149,8 +149,8 @@ export const checks: Check[] = [
     requirements: [
       ["bomb", "hookshot"],
       ["bomb", "heroBow"],
-      ["bomb", "dekuMask", "magic"],
-      ["bomb", "zoraMask"],
+      ["bomb", "maskDeku", "magic"],
+      ["bomb", "maskZora"],
     ],
     peekRequirements: [],
   },
@@ -167,7 +167,7 @@ export const checks: Check[] = [
   {
     id: "honeyDarling",
     name: "Honey and Darling Any Day",
-    requirements: [["bomb"], ["heroBow"], ["dekuMask", "magic"]],
+    requirements: [["bomb"], ["heroBow"], ["maskDeku", "magic"]],
   },
   {
     id: "townArchery",
@@ -177,12 +177,12 @@ export const checks: Check[] = [
   {
     id: "chestGame",
     name: "Goron Chest Game",
-    requirements: [["goronMask"]],
+    requirements: [["maskGoron"]],
   },
   {
     id: "mayor",
     name: "Mayor",
-    requirements: [["couplesMask"]],
+    requirements: [["maskCouples"]],
   },
   {
     id: "aromaBar",
@@ -198,7 +198,7 @@ export const checks: Check[] = [
     id: "soundcheck",
     name: "Soundcheck",
     requirements: [
-      ["goronMask", "zoraMask", "dekuMask", "romaniMask", "ocarina"],
+      ["maskGoron", "maskZora", "maskDeku", "maskRomani", "ocarina"],
     ],
   },
   {
@@ -209,7 +209,7 @@ export const checks: Check[] = [
   {
     id: "midnightMeeting",
     name: "Midnight Meeting",
-    requirements: [["kafeiMask"]],
+    requirements: [["maskKafei"]],
   },
   {
     id: "toiletHand",

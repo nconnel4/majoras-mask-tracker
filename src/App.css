@@ -8,13 +8,15 @@
 
 .tracker {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
   height: 60rem;
 }
 
 .inventory {
   border: 2px #747bff solid;
   border-radius: 10px;
+  background: #1a1a1a;
+  padding: 10px;
 }
 
 .items,
@@ -53,11 +55,13 @@
 
 .check-list {
   overflow-y: auto;
-  padding-right: 0.5rem;
   background: #1a1a1a;
   flex-basis: 350px;
   flex-shrink: 0;
   flex-grow: 1;
+  border: 2px #747bff solid;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .region,
@@ -114,12 +118,20 @@ button:hover {
 }
 
 .marker {
-  width: 1rem;
-  height: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
   position: absolute;
   border: solid white 0.15rem;
   border-radius: 0.25rem;
   padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.marker span {
+  font-weight: bolder;
+  color: #1a1a1a;
 }
 
 .marker.inaccessible {
@@ -132,6 +144,10 @@ button:hover {
 
 .marker.full-clear {
   background: lightgreen;
+}
+
+.marker.clear {
+  background: gray;
 }
 
 .marker.hidden {

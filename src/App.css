@@ -312,16 +312,41 @@ button:hover {
 }
 
 #marker-shr {
-  top: 24%;
+  top: 22%;
   left: 78%;
 }
 
 #marker-can {
-  top: 30%;
-  left: 84%;
+  top: 27%;
+  left: 80%;
 }
 
 #marker-well {
   top: 24%;
   left: 84%;
+}
+
+#marker-cas {
+  top: 30%;
+  left: 84%;
+}
+
+#marker-st {
+  top: 20%;
+  left: 95%;
+}
+
+#marker-wft {
+  top: 49%;
+  left: 55%;
+}
+
+#marker-sht {
+  top: 4%;
+  left: 48%;
+}
+
+#marker-gbt {
+  top: 36%;
+  left: 5%;
 }

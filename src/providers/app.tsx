@@ -16,6 +16,8 @@ export const AppProvider = ({ children }: AppProviderProps) => {
           "sword",
           "shield",
           "songEpona",
+          "songTime",
+          "songSoaring",
           "dekuStick",
           "dekuNut",
         ]}

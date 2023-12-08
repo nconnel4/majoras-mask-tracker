@@ -26,6 +26,12 @@
   margin-bottom: 2rem;
 }
 
+.songs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-bottom: 2rem;
+}
+
 .item {
   width: 2.75rem;
   height: 2.75rem;
@@ -273,4 +279,74 @@ button:hover {
 #marker-pr {
   top: 30%;
   left: 14%;
+}
+
+#marker-vil {
+  top: 20%;
+  left: 55%;
+}
+
+#marker-twi {
+  top: 16%;
+  left: 52%;
+}
+
+#marker-gor {
+  top: 12%;
+  left: 60%;
+}
+
+#marker-psh {
+  top: 11%;
+  left: 48%;
+}
+
+#marker-rti {
+  top: 31%;
+  left: 62%;
+}
+
+#marker-gy {
+  top: 26%;
+  left: 68%;
+}
+
+#marker-shr {
+  top: 22%;
+  left: 78%;
+}
+
+#marker-can {
+  top: 27%;
+  left: 80%;
+}
+
+#marker-well {
+  top: 24%;
+  left: 84%;
+}
+
+#marker-cas {
+  top: 30%;
+  left: 84%;
+}
+
+#marker-st {
+  top: 20%;
+  left: 95%;
+}
+
+#marker-wft {
+  top: 49%;
+  left: 55%;
+}
+
+#marker-sht {
+  top: 4%;
+  left: 48%;
+}
+
+#marker-gbt {
+  top: 36%;
+  left: 5%;
 }

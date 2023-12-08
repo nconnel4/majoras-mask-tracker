@@ -51,6 +51,16 @@ import keg from "../assets/powderKeg.png";
 import razorSword from "../assets/razorSword.png";
 import maskRomani from "../assets/romaniMask.png";
 import roomKey from "../assets/roomKey.png";
+import songElegy from "../assets/songElegy.png";
+import songEpona from "../assets/songEpona.png";
+import songHealing from "../assets/songHealing.png";
+import songLullaby from "../assets/songLullaby.png";
+import songNewWave from "../assets/songNewWave.png";
+import songOath from "../assets/songOath.png";
+import songSoaring from "../assets/songSoaring.png";
+import songSonata from "../assets/songSonata.png";
+import songStorms from "../assets/songStorms.png";
+import songTime from "../assets/songTime.png";
 import stoneMask from "../assets/stoneMask.png";
 import swampTitleDeed from "../assets/swampTitleDeed.png";
 import wallet from "../assets/wallet.png";
@@ -438,5 +448,65 @@ export const items: Item[] = [
     name: "FierceDeity",
     type: "mask",
     image: maskFierceDeity,
+  },
+  {
+    id: "songTime",
+    name: "Song of Time",
+    type: "song",
+    image: songTime,
+  },
+  {
+    id: "songHealing",
+    name: "Song of Healing",
+    type: "song",
+    image: songHealing,
+  },
+  {
+    id: "songEpona",
+    name: "Epona Song",
+    type: "song",
+    image: songEpona,
+  },
+  {
+    id: "songSoaring",
+    name: "Song of Soaring",
+    type: "song",
+    image: songSoaring,
+  },
+  {
+    id: "songStorms",
+    name: "Song of Storms",
+    type: "song",
+    image: songStorms,
+  },
+  {
+    id: "songSonata",
+    name: "Sonata of Awakening",
+    type: "song",
+    image: songSonata,
+  },
+  {
+    id: "songLullaby",
+    name: "Goron Lullaby",
+    type: "song",
+    image: songLullaby,
+  },
+  {
+    id: "songNewWave",
+    name: "New Wave Bossa Nova",
+    type: "song",
+    image: songNewWave,
+  },
+  {
+    id: "songElegy",
+    name: "Elegy of Emptiness",
+    type: "song",
+    image: songElegy,
+  },
+  {
+    id: "songOath",
+    name: "Oath to Order",
+    type: "song",
+    image: songOath,
   },
 ];

@@ -13,6 +13,18 @@ export const Tracker = () => {
   const [region, setRegion] = useState("");
 
   useEffect(() => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      e.preventDefault();
+      e.returnValue = "";
+    };
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.addEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
+
+  useEffect(() => {
     for (let i = 0; i < checks.length; i++) {
       const check = {
         ...checks[i],

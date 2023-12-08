@@ -26,6 +26,12 @@
   margin-bottom: 2rem;
 }
 
+.songs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-bottom: 2rem;
+}
+
 .item {
   width: 2.75rem;
   height: 2.75rem;

@@ -11,6 +11,7 @@ type MapProps = {
 export const Map = ({ setRegion }: MapProps) => {
   return (
     <div className={"map"}>
+      <img src={"/overworld.png"} alt={"terminaMap"} />
       {regions.map((region) => (
         <Marker key={region.id} id={region.id} setRegion={setRegion} />
       ))}

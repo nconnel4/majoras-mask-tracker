@@ -321,5 +321,15 @@ export const regionChecks: RegionChecks = {
     "gyorg",
     "songGreatBayBBW",
   ],
-  stt: [],
+  stt: [
+    "sttCompass",
+    "sttMap",
+    "sttArmos",
+    "sttGaroMaster",
+    "isttUpdraft",
+    "isttGiantMask",
+    "isttDeathArmos",
+    "isttTwinmold",
+    "songSttBBW",
+  ],
 };

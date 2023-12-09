@@ -20,10 +20,12 @@ import maskGaro from "../assets/garoMask.png";
 import maskGiant from "../assets/giantMask.png";
 import maskGibdo from "../assets/gibdoMask.png";
 import gildedSword from "../assets/gildedSword.png";
+import remainsGoht from "../assets/gohtRemains.png";
 import goldDust from "../assets/goldDust.png";
 import maskGoron from "../assets/goronMask.png";
 import greatFairyMask from "../assets/greatFairyMask.png";
 import gfs from "../assets/greatFairySword.png";
+import remainsGyorg from "../assets/gyorgRemains.png";
 import hookshot from "../assets/hookshot.png";
 import hylianShield from "../assets/hylianShield.png";
 import iceArrow from "../assets/iceArrow.png";
@@ -45,6 +47,7 @@ import moonTear from "../assets/moonTear.png";
 import mountainTitleDeed from "../assets/mountainTitleDeed.png";
 import ocarina from "../assets/ocarina.png";
 import oceanTitleDeed from "../assets/oceanTitleDeed.png";
+import remainsOdolwa from "../assets/odolwaRemains.png";
 import pictograph from "../assets/pictographBox.png";
 import postmanHat from "../assets/postmanHat.png";
 import keg from "../assets/powderKeg.png";
@@ -63,6 +66,7 @@ import songStorms from "../assets/songStorms.png";
 import songTime from "../assets/songTime.png";
 import stoneMask from "../assets/stoneMask.png";
 import swampTitleDeed from "../assets/swampTitleDeed.png";
+import remainsTwinmold from "../assets/twinmoldRemains.png";
 import wallet from "../assets/wallet.png";
 import maskZora from "../assets/zoraMask.png";
 import { Item } from "../types";
@@ -508,5 +512,29 @@ export const items: Item[] = [
     name: "Oath to Order",
     type: "song",
     image: songOath,
+  },
+  {
+    id: "remainsOdolwa",
+    name: "Odolwa Remains",
+    type: "remain",
+    image: remainsOdolwa,
+  },
+  {
+    id: "remainsGoht",
+    name: "Goht Remains",
+    type: "remain",
+    image: remainsGoht,
+  },
+  {
+    id: "remainsGyorg",
+    name: "Gyorg Remains",
+    type: "remain",
+    image: remainsGyorg,
+  },
+  {
+    id: "remainsTwinmold",
+    name: "Twinmold Remains",
+    type: "remain",
+    image: remainsTwinmold,
   },
 ];

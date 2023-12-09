@@ -17,6 +17,7 @@
   border-radius: 10px;
   background: #1a1a1a;
   padding: 10px;
+  flex-shrink: 1;
 }
 
 .items,
@@ -33,8 +34,10 @@
 }
 
 .item {
-  width: 2.75rem;
-  height: 2.75rem;
+  max-width: 2.75rem;
+  max-height: 2.75rem;
+  min-width: 2rem;
+  min-height: 2rem;
   padding: 0.1rem;
   margin: 0.2rem;
   opacity: 30%;
@@ -128,20 +131,20 @@ button:hover {
 
 .map {
   /*noinspection CssUnknownTarget*/
-  background-image: url("/overworld.png");
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: contain;
   position: relative;
   background-color: #242424;
-  flex-basis: 1000px;
   flex-grow: 1;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  height: fit-content;
+  min-width: 750px;
+}
+.map img {
+  width: 100%;
 }
 
 .marker {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.5em;
+  height: 1.5em;
   position: absolute;
   border: solid #1a1a1a 0.15rem;
   border-radius: 0.25rem;
@@ -149,7 +152,7 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 5px 2px 2px #1a1a1a;
+  box-shadow: 0.25em 0.2em 0.2em #1a1a1a;
 }
 
 .marker span {
@@ -178,175 +181,175 @@ button:hover {
 }
 
 #marker-nct {
-  top: 3%;
+  top: 6%;
   left: 11%;
 }
 
 #marker-sct {
-  top: 18%;
+  top: 29%;
   left: 11%;
 }
 
 #marker-ctr {
-  top: 10%;
-  left: 11%;
+  top: 13.5%;
+  left: 10.5%;
 }
 
 #marker-wct {
-  top: 10%;
-  left: 3%;
+  top: 23%;
+  left: 2%;
 }
 #marker-ect {
-  top: 15%;
+  top: 23%;
   left: 20%;
 }
 
 #marker-lp {
-  top: 20%;
-  left: 3%;
+  top: 32%;
+  left: 2%;
 }
 
 #marker-spi {
-  top: 11%;
-  left: 17%;
+  top: 15%;
+  left: 16%;
 }
 
 #marker-tf {
-  top: 36%;
+  top: 59%;
   left: 55%;
 }
 
 #marker-rsw {
-  top: 42%;
+  top: 67%;
   left: 53%;
 }
 
 #marker-mr {
-  top: 36%;
+  top: 57%;
   left: 50%;
 }
 
 #marker-rr {
-  top: 40%;
+  top: 62%;
   left: 46%;
 }
 
 #marker-ssw {
-  top: 50%;
+  top: 77%;
   left: 65%;
 }
 
 #marker-pal {
-  top: 55%;
+  top: 88%;
   left: 50%;
 }
 
 #marker-wf {
-  top: 53%;
+  top: 85%;
   left: 56%;
 }
 
 #marker-gbc {
-  top: 35%;
+  top: 56%;
   left: 28%;
 }
 
 #marker-zc {
-  top: 40%;
+  top: 65%;
   left: 28%;
 }
 
 #marker-zh {
-  top: 41%;
+  top: 65%;
   left: 21%;
 }
 
 #marker-pfe {
-  top: 26%;
+  top: 40%;
   left: 29%;
 }
 
 #marker-pfi {
-  top: 22%;
+  top: 34%;
   left: 30%;
 }
 
 #marker-pfs {
-  top: 24%;
+  top: 39%;
   left: 33%;
 }
 
 #marker-pr {
-  top: 30%;
-  left: 14%;
+  top: 49%;
+  left: 13.5%;
 }
 
 #marker-vil {
-  top: 20%;
+  top: 33%;
   left: 55%;
 }
 
 #marker-twi {
-  top: 16%;
+  top: 25%;
   left: 52%;
 }
 
 #marker-gor {
-  top: 12%;
+  top: 20%;
   left: 60%;
 }
 
 #marker-psh {
-  top: 11%;
+  top: 18%;
   left: 48%;
 }
 
 #marker-rti {
-  top: 31%;
+  top: 50%;
   left: 62%;
 }
 
 #marker-gy {
-  top: 26%;
+  top: 42%;
   left: 68%;
 }
 
 #marker-shr {
-  top: 22%;
+  top: 38%;
   left: 78%;
 }
 
 #marker-can {
-  top: 27%;
-  left: 80%;
+  top: 48%;
+  left: 78%;
 }
 
 #marker-well {
-  top: 24%;
+  top: 38%;
   left: 84%;
 }
 
 #marker-cas {
-  top: 30%;
-  left: 84%;
+  top: 47%;
+  left: 83%;
 }
 
 #marker-st {
-  top: 20%;
+  top: 32%;
   left: 95%;
 }
 
 #marker-wft {
-  top: 49%;
+  top: 78%;
   left: 55%;
 }
 
 #marker-sht {
-  top: 4%;
+  top: 6%;
   left: 48%;
 }
 
 #marker-gbt {
-  top: 36%;
-  left: 5%;
+  top: 58%;
+  left: 6%;
 }

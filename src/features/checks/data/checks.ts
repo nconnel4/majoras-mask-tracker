@@ -2367,8 +2367,8 @@ export const checks: Check[] = [
     ],
   },
   {
-    id: "sttCompass",
-    name: "Underwater Chest",
+    id: "sttEyegoreRoom",
+    name: "Eyegore Room Chest",
     requirements: [
       [
         "hookshot",

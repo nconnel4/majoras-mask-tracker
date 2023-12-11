@@ -3,22 +3,24 @@ import {
   Dispatch,
   MouseEvent,
   SetStateAction,
-  useContext,
   useEffect,
   useState,
 } from "react";
+import * as React from "react";
 
-import { CheckContext, regionChecks } from "@/features/checks";
+import { checks, regionChecks } from "@/features/checks";
+import { LogicContext } from "@/features/logic";
 
 type MarkerProps = {
   id: string;
   setRegion: Dispatch<SetStateAction<string>>;
+  completeChecks: string[];
 };
 
-export const Marker = ({ id, setRegion }: MarkerProps) => {
+export const Marker = ({ id, setRegion, completeChecks }: MarkerProps) => {
   const [variant, setVariant] = useState("inaccessible");
   const [checkCount, setCheckCount] = useState(0);
-  const checks = useContext(CheckContext);
+  const logic = React.useContext(LogicContext);
 
   useEffect(() => {
     const regionCheckList = regionChecks[id];
@@ -28,24 +30,31 @@ export const Marker = ({ id, setRegion }: MarkerProps) => {
 
     if (checkList.length === 0) {
       setVariant("hidden");
-    } else if (checkList.every((check) => check.isComplete)) {
+    } else if (checkList.every((check) => completeChecks.includes(check.id))) {
       setVariant("clear");
     } else if (
       checkList
-        .filter((check) => !check.isComplete)
-        .every((check) => check.isActive)
+        .filter((check) => !completeChecks.includes(check.id))
+        .every((check) => logic[check.id])
     ) {
       setVariant("full-clear");
-    } else if (checkList.some((check) => check.isActive && !check.isComplete)) {
+    } else if (
+      checkList.some(
+        (check) => logic[check.id] && !completeChecks.includes(check.id),
+      )
+    ) {
       setVariant("partial-clear");
     } else {
       setVariant("inaccessible");
     }
 
     setCheckCount(
-      checkList.filter((check) => check.isActive && !check.isComplete).length,
+      checkList.filter(
+        (check) => logic[check.id] && !completeChecks.includes(check.id),
+      ).length,
     );
-  }, [checks, id]);
+  }, [logic, completeChecks, id]);
+
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     const regionId = e.currentTarget.id.split("-")[1];
 

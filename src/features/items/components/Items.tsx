@@ -10,20 +10,16 @@ export const Items = () => {
   return (
     <div className="items">
       <Item id="ocarina" />
-      {!inventory.includes("heroBow2") && <Item id="heroBow" />}
-      {inventory.includes("heroBow2") && !inventory.includes("heroBow3") && (
-        <Item id="heroBow2" />
-      )}
-      {inventory.includes("heroBow3") && <Item id={"heroBow3"} />}
+      {!inventory.heroBow2 && <Item id="heroBow" />}
+      {inventory.heroBow2 && !inventory.heroBow3 && <Item id="heroBow2" />}
+      {inventory.heroBow3 && <Item id={"heroBow3"} />}
       <Item id="fireArrow" />
       <Item id="iceArrow" />
       <Item id="lightArrow" />
       <Item id="moonTear" />
-      {!inventory.includes("bomb2") && <Item id="bomb" />}
-      {inventory.includes("bomb2") && !inventory.includes("bomb3") && (
-        <Item id={"bomb2"} />
-      )}
-      {inventory.includes("bomb3") && <Item id={"bomb3"} />}
+      {!inventory.bomb2 && <Item id="bomb" />}
+      {inventory.bomb2 && !inventory.bomb3 && <Item id={"bomb2"} />}
+      {inventory.bomb3 && <Item id={"bomb3"} />}
       <Item id={"bombchu"} />
       <Item id={"dekuStick"} />
       <Item id={"dekuNut"} />
@@ -41,16 +37,14 @@ export const Items = () => {
       <Item id="dekuPrincess" />
 
       <Item id="magic" />
-      {!inventory.includes("wallet2") && <Item id="wallet" />}
-      {inventory.includes("wallet2") && <Item id={"wallet2"} />}
+      {!inventory.wallet2 && <Item id="wallet" />}
+      {inventory.wallet2 && <Item id={"wallet2"} />}
       <Item id="mountainTitleDeed" />
-      {!inventory.includes("sword2") && <Item id="sword" />}
-      {inventory.includes("sword2") && !inventory.includes("sword3") && (
-        <Item id="sword2" />
-      )}
-      {inventory.includes("sword3") && <Item id="sword3" />}
-      {!inventory.includes("mirrorShield") && <Item id="shield" />}
-      {inventory.includes("mirrorShield") && <Item id={"mirrorShield"} />}
+      {!inventory.sword2 && <Item id="sword" />}
+      {inventory.sword2 && !inventory.sword3 && <Item id="sword2" />}
+      {inventory.sword3 && <Item id="sword3" />}
+      {!inventory.mirrorShield && <Item id="shield" />}
+      {inventory.mirrorShield && <Item id={"mirrorShield"} />}
       <Item id="roomKey" />
       <Item id="letterToKafei" />
       <Item id="letterToMama" />

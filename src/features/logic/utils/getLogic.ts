@@ -127,7 +127,7 @@ export const getLogic = (inventory: Items) => {
       (inventory.maskDeku && inventory.magic),
     townArchery: inventory.heroBow,
     chestGame: inventory.maskGoron,
-    aromaBar: inventory.letterToMama,
+    aromaBar: inventory.letterToMama && inventory.maskKafei,
     postmanFreedom: inventory.letterToMama,
     soundcheck:
       inventory.maskGoron &&

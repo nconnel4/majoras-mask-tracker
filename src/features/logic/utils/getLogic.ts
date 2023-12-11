@@ -138,7 +138,8 @@ export const getLogic = (inventory: Items) => {
 
     // Stock Pot Inn
     stockPotKey: true,
-    midnightMeeting: inventory.maskKafei,
+    midnightMeeting:
+      inventory.maskKafei && (inventory.maskDeku || inventory.roomKey),
     toiletHand:
       inventory.landTitleDeed ||
       inventory.swampTitleDeed ||

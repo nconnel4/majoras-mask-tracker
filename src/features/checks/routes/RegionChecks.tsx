@@ -1,36 +1,29 @@
-import _ from "lodash";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import * as React from "react";
 
-import { CheckContext, CheckDispatchContext } from "@/features/checks";
-import { evaluateCheck } from "@/features/checks/utils/evaluateChecks.ts";
-import { InventoryContext } from "@/features/inventory";
+import { LogicContext } from "@/features/logic";
 
 import { Check } from "../components/Check";
+import { checks } from "../data/checks";
 import { regionChecks as regionCheckList } from "../data/regions";
-import { PlayerCheck } from "../types";
+import { Check as CheckType } from "../types";
 
 type RegionChecksProps = {
   region: string;
-  setRegion: Dispatch<SetStateAction<string>>;
+  setRegion: React.Dispatch<React.SetStateAction<string>>;
+  completeChecks: string[];
+  setCompleteChecks: React.Dispatch<React.SetStateAction<string[]>>;
 };
 
-export const RegionChecks = ({ region, setRegion }: RegionChecksProps) => {
-  const [regionChecks, setRegionChecks] = useState<PlayerCheck[]>([]);
-  const checks = React.useContext(CheckContext);
-  const dispatch = React.useContext(CheckDispatchContext);
-  const inventory = React.useContext(InventoryContext);
+export const RegionChecks = ({
+  region,
+  setRegion,
+  completeChecks,
+  setCompleteChecks,
+}: RegionChecksProps) => {
+  const [regionChecks, setRegionChecks] = React.useState<CheckType[]>([]);
+  const logic = React.useContext(LogicContext);
 
-  useEffect(() => {
-    for (let i = 0; i < checks.length; i++) {
-      const newCheck = evaluateCheck(checks[i], inventory);
-      if (!_.isEqual(newCheck, checks[i]) && dispatch) {
-        dispatch({ type: "updateCheck", payload: newCheck });
-      }
-    }
-  }, [region, inventory, checks, dispatch]);
-
-  useEffect(() => {
+  React.useEffect(() => {
     const checkList = regionCheckList[region];
     setRegionChecks(
       checkList.map((check) => {
@@ -42,12 +35,15 @@ export const RegionChecks = ({ region, setRegion }: RegionChecksProps) => {
         return lookup;
       }),
     );
-  }, [region, checks, dispatch]);
+  }, [region, completeChecks]);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const check = checks.find((check) => check.id === e.currentTarget.id);
-    if (check && dispatch) {
-      dispatch({ type: "toggleComplete", payload: check });
+    if (completeChecks.includes(e.currentTarget.id)) {
+      setCompleteChecks(
+        completeChecks.filter((check) => check !== e.currentTarget.id),
+      );
+    } else {
+      setCompleteChecks([...completeChecks, e.currentTarget.id]);
     }
   };
 
@@ -59,7 +55,11 @@ export const RegionChecks = ({ region, setRegion }: RegionChecksProps) => {
       {regionChecks.map((check) => {
         return (
           <button key={check.id} id={check.id} onClick={handleClick}>
-            <Check check={check} />
+            <Check
+              check={check}
+              isActive={logic[check.id]}
+              isComplete={completeChecks.includes(check.id)}
+            />
           </button>
         );
       })}

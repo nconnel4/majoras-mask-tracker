@@ -1,28 +1,31 @@
 import { faMusic } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { clsx } from "clsx";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
-import { PlayerCheck } from "@/features/checks/types";
+import { LogicContext } from "@/features/logic";
+
+import { Check as CheckType } from "../types";
 
 type CheckProps = {
-  check: PlayerCheck;
+  check: CheckType;
+  isComplete: boolean;
+  isActive: boolean;
 };
 
-export const Check = ({ check }: CheckProps) => {
+export const Check = ({ check, isComplete, isActive }: CheckProps) => {
   const [variant, setVariant] = useState("inactive");
+  const logic = useContext(LogicContext);
 
   useEffect(() => {
-    if (check.isComplete) {
+    if (isComplete) {
       setVariant("complete");
-    } else if (check.isActive) {
+    } else if (isActive) {
       setVariant("active");
-    } else if (check.canPeek) {
-      setVariant("peek");
     } else {
       setVariant("inactive");
     }
-  }, [check]);
+  }, [check, logic, isComplete, isActive]);
 
   return (
     <div className={clsx("check", variant)} id={check.id}>

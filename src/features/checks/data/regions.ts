@@ -323,6 +323,7 @@ export const regionChecks: RegionChecks = {
   ],
   stt: [
     "sttCompass",
+    "sttEyegoreRoom",
     "sttMap",
     "sttArmos",
     "sttGaroMaster",

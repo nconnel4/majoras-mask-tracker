@@ -1,26 +1,35 @@
 import * as React from "react";
 
-type inventoryItems = string[];
+import { inventory } from "../data/inventory.tsx";
+import { Items } from "../types";
 
 type InventoryAction = {
   type: "toggle";
-  payload: string;
+  payload: keyof Items;
 };
 
-export const InventoryContext = React.createContext<inventoryItems>([]);
+export const InventoryContext = React.createContext<Items>(inventory);
 export const InventoryDispatchContext =
   React.createContext<React.Dispatch<InventoryAction> | null>(null);
 
 type InventoryProviderProps = {
   children: React.ReactNode;
-  initialItems?: string[];
+  initialItems: (keyof Items)[];
 };
 
 export const InventoryProvider = ({
   children,
-  initialItems = [],
+  initialItems,
 }: InventoryProviderProps) => {
-  const [items, dispatch] = React.useReducer(inventoryReducer, initialItems);
+  const startingInventory = inventory;
+  for (let i = 0; i < initialItems.length; i++) {
+    startingInventory[initialItems[i]] = true;
+  }
+
+  const [items, dispatch] = React.useReducer(
+    inventoryReducer,
+    startingInventory,
+  );
 
   return (
     <InventoryContext.Provider value={items}>
@@ -31,74 +40,64 @@ export const InventoryProvider = ({
   );
 };
 
-const inventoryReducer = (
-  items: inventoryItems,
-  action: InventoryAction,
-): inventoryItems => {
+const inventoryReducer = (items: Items, action: InventoryAction): Items => {
   switch (action.type) {
     case "toggle": {
       // bow
-      if (action.payload === "heroBow" && items.includes("heroBow")) {
-        return [...items, "heroBow2"];
+      if (action.payload === "heroBow" && items.heroBow) {
+        return { ...items, heroBow2: true };
       }
       if (action.payload === "heroBow2") {
-        return [...items, "heroBow3"];
+        return { ...items, heroBow3: true };
       }
       if (action.payload === "heroBow3") {
-        return items.filter(
-          (item) => !["heroBow", "heroBow2", "heroBow3"].includes(item),
-        );
+        return {
+          ...items,
+          heroBow: false,
+          heroBow2: false,
+          heroBow3: false,
+        };
       }
 
       // bombs
-      if (action.payload === "bomb" && items.includes("bomb")) {
-        return [...items, "bomb2"];
+      if (action.payload === "bomb" && items.bomb) {
+        return { ...items, bomb2: true };
       }
       if (action.payload === "bomb2") {
-        return [...items, "bomb3"];
+        return { ...items, bomb3: true };
       }
       if (action.payload === "bomb3") {
-        return items.filter(
-          (item) => !["bomb", "bomb2", "bomb3"].includes(item),
-        );
+        return { ...items, bomb: false, bomb2: false, bomb3: false };
       }
 
       // sword
-      if (action.payload === "sword" && items.includes("sword")) {
-        return [...items, "sword2"];
+      if (action.payload === "sword" && items.sword) {
+        return { ...items, sword2: true };
       }
       if (action.payload === "sword2") {
-        return [...items, "sword3"];
+        return { ...items, sword3: true };
       }
       if (action.payload === "sword3") {
-        return items.filter(
-          (item) => !["sword", "sword2", "sword3"].includes(item),
-        );
+        return { ...items, sword: false, sword2: false, sword3: false };
       }
 
       // shield
-      if (action.payload === "shield" && items.includes("shield")) {
-        return [...items, "mirrorShield"];
+      if (action.payload === "shield" && items.shield) {
+        return { ...items, mirrorShield: true };
       }
       if (action.payload === "mirrorShield") {
-        return items.filter(
-          (item) => !["shield", "mirrorShield"].includes(item),
-        );
+        return { ...items, shield: false, mirrorShield: false };
       }
 
       // wallet
-      if (action.payload === "wallet" && items.includes("wallet")) {
-        return [...items, "wallet2"];
+      if (action.payload === "wallet" && items.wallet) {
+        return { ...items, wallet2: true };
       }
       if (action.payload === "wallet2") {
-        return items.filter((item) => !["wallet", "wallet2"].includes(item));
+        return { ...items, wallet: false, wallet2: false };
       }
 
-      if (items.includes(action.payload)) {
-        return items.filter((item) => item !== action.payload);
-      }
-
-      return [...items, action.payload];
+      return { ...items, [action.payload]: !items[action.payload] };
     }
 
     default:

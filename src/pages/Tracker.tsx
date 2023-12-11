@@ -1,18 +1,16 @@
-import { useContext, useEffect, useState } from "react";
+import * as React from "react";
 
-import { CheckDispatchContext, Regions, checks } from "@/features/checks";
-import { RegionChecks } from "@/features/checks/routes/RegionChecks.tsx";
-import { evaluateCheck } from "@/features/checks/utils/evaluateChecks.ts";
-import { InventoryContext } from "@/features/inventory";
+import { RegionChecks, Regions } from "@/features/checks";
+import { InventoryProvider } from "@/features/inventory";
 import { Inventory } from "@/features/items";
+import { LogicProvider } from "@/features/logic";
 import { Map } from "@/features/map";
 
 export const Tracker = () => {
-  const dispatch = useContext(CheckDispatchContext);
-  const inventory = useContext(InventoryContext);
-  const [region, setRegion] = useState("");
+  const [region, setRegion] = React.useState("");
+  const [completeChecks, setCompleteChecks] = React.useState<string[]>([]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const handleBeforeUnload = (e: BeforeUnloadEvent) => {
       e.preventDefault();
       e.returnValue = "";
@@ -24,27 +22,34 @@ export const Tracker = () => {
     };
   }, []);
 
-  useEffect(() => {
-    for (let i = 0; i < checks.length; i++) {
-      const check = {
-        ...checks[i],
-        isComplete: false,
-        isActive: false,
-        canPeek: false,
-      };
-      const _check = evaluateCheck(check, inventory);
-      if (dispatch) {
-        dispatch({ type: "addCheck", payload: _check });
-      }
-    }
-  }, [dispatch, inventory]);
-
   return (
     <div className="tracker">
-      <Inventory />
-      {!region && <Regions setRegion={setRegion} />}
-      {region && <RegionChecks region={region} setRegion={setRegion} />}
-      <Map setRegion={setRegion} />
+      <InventoryProvider
+        initialItems={[
+          "sword",
+          "shield",
+          "ocarina",
+          "songEpona",
+          "songTime",
+          "songSoaring",
+          "dekuNut",
+          "dekuStick",
+        ]}
+      >
+        <LogicProvider>
+          <Inventory />
+          {!region && <Regions setRegion={setRegion} />}
+          {region && (
+            <RegionChecks
+              region={region}
+              setRegion={setRegion}
+              setCompleteChecks={setCompleteChecks}
+              completeChecks={completeChecks}
+            />
+          )}
+          <Map setRegion={setRegion} completeChecks={completeChecks} />
+        </LogicProvider>
+      </InventoryProvider>
     </div>
   );
 };

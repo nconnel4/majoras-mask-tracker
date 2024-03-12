@@ -373,3 +373,20 @@ button:hover {
   top: 39%;
   left: 95%;
 }
+
+@media (max-width: 1400px) {
+  .tracker {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-basis: 100%;
+  }
+
+  .check-list {
+    max-height: 45vh;
+    flex-basis: 50%;
+  }
+
+  .inventory {
+    flex-basis: 40%;
+  }
+}

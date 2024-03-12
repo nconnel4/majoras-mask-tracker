@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { InventoryContext } from "@/features/inventory";
 
-import { getLogic } from "../utils/getLogic.ts";
+import { getLogic } from "../utils/logic.ts";
 
 type Logic = {
   [key: string]: boolean;

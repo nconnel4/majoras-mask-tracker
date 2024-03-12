@@ -104,6 +104,7 @@ export const getLogic = (inventory: Items) => {
       inventory.maskDeku || inventory.maskZora || inventory.maskGoron,
     bomberKids: hasProjectile,
     dekuPlayground: inventory.maskDeku,
+    keaton: inventory.maskKeaton,
     oldLady: true,
 
     // West Clock Town
@@ -127,6 +128,7 @@ export const getLogic = (inventory: Items) => {
       (inventory.maskDeku && inventory.magic),
     townArchery: inventory.heroBow,
     chestGame: inventory.maskGoron,
+    mayor: inventory.maskCouples,
     aromaBar: inventory.letterToMama && inventory.maskKafei,
     postmanFreedom: inventory.letterToMama,
     soundcheck:
@@ -176,7 +178,8 @@ export const getLogic = (inventory: Items) => {
     curiosity2: inventory.letterToKafei,
 
     // Road to Southern Swamp
-    rswTruee: hasProjectile,
+    rswGrotto: true,
+    rswTree: hasProjectile,
     mapSnowhead: hasProjectile,
     swampArchery1: inventory.heroBow,
     swampArchery2: inventory.heroBow,

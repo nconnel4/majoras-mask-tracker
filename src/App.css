@@ -19,6 +19,18 @@
   box-sizing: border-box;
 }
 
+.map-hints {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 55%;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.hints {
+  display: flex;
+}
+
 .items,
 .masks {
   display: grid;
@@ -142,9 +154,7 @@ button:hover {
 .map {
   position: relative;
   background-color: #242424;
-  flex-basis: 55%;
-  flex-grow: 1;
-  flex-shrink: 1;
+
   height: fit-content;
   min-width: 750px;
   max-height: 700px;

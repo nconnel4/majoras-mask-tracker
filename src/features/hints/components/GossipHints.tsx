@@ -91,6 +91,12 @@ export const GossipHints = () => {
                 <ItemSelect name="shiro" />
               </div>
             </li>
+            <li>
+              <div className="item-hint">
+                Swamp Archery
+                <ItemSelect name="swampArchery" />
+              </div>
+            </li>
           </ul>
         </div>
       </div>

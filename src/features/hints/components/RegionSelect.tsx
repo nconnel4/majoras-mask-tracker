@@ -5,10 +5,12 @@ type RegionSelectProps = {
 };
 
 export const RegionSelect = ({ name }: RegionSelectProps) => {
+  const regionsCopy = regions.slice();
+
   return (
     <select name={name}>
       <option>-</option>
-      {regions
+      {regionsCopy
         .sort((a, b) => {
           return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
         })

@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import { RegionChecks, Regions } from "@/features/checks";
+import { Hints } from "@/features/hints";
 import { InventoryProvider } from "@/features/inventory";
 import { Inventory } from "@/features/items";
 import { LogicProvider } from "@/features/logic";
@@ -47,7 +48,10 @@ export const Tracker = () => {
               completeChecks={completeChecks}
             />
           )}
-          <Map setRegion={setRegion} completeChecks={completeChecks} />
+          <div className="map-hints">
+            <Map setRegion={setRegion} completeChecks={completeChecks} />
+            <Hints />
+          </div>
         </LogicProvider>
       </InventoryProvider>
     </div>

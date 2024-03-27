@@ -19,6 +19,63 @@
   box-sizing: border-box;
 }
 
+.map-hints {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 55%;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.hints {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  grid-template-rows: 1fr 1fr;
+  text-align: start;
+}
+
+.hint {
+  display: block;
+}
+
+.hint h3 {
+  margin-bottom: 0.1rem;
+}
+
+.always-hints {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.sometimes-hints {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.gossip-hints h4,
+h3 {
+  margin-bottom: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+.gossip-hints ul {
+  padding-left: 0;
+}
+
+.gossip-hints li {
+  list-style: none;
+}
+
+.item-hint {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+}
+
+.item-hint select {
+  margin-left: 0.5rem;
+}
+
 .items,
 .masks {
   display: grid;
@@ -142,9 +199,7 @@ button:hover {
 .map {
   position: relative;
   background-color: #242424;
-  flex-basis: 55%;
-  flex-grow: 1;
-  flex-shrink: 1;
+
   height: fit-content;
   min-width: 750px;
   max-height: 700px;

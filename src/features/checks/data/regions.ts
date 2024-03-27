@@ -136,7 +136,7 @@ export const regions: Region[] = [
   },
   {
     id: "sht",
-    name: "Stonehead Temple",
+    name: "Snowhead Temple",
   },
   {
     id: "gbt",

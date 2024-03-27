@@ -1,5 +1,6 @@
-import { FoolishLocations } from "./FoolishLocations.tsx";
-import { WothLocations } from "./WothLocations.tsx";
+import { FoolishLocations } from "./FoolishLocations";
+import { GossipHints } from "./GossipHints";
+import { WothLocations } from "./WothLocations";
 
 export const Hints = () => {
   return (
@@ -7,6 +8,7 @@ export const Hints = () => {
       <div className="hints">
         <WothLocations />
         <FoolishLocations />
+        <GossipHints />
       </div>
     </>
   );

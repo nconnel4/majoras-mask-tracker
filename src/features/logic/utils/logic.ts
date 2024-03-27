@@ -188,12 +188,20 @@ export const getLogic = (inventory: Items) => {
     roof: inventory.landTitleDeed && inventory.maskDeku,
     woodsGrotto: true,
     koume: true,
-    kotake: true,
+    kotake: inventory.bottle1,
     swampGrotto: hasSwampAcess,
     contest: inventory.pictographBox,
     landTitleDeed: inventory.landTitleDeed,
     boatArchery: canClearWoodfallTemple,
-    swampSpiderHouse: false,
+    swampSpiderHouse:
+      hasSwampAcess &&
+      (inventory.dekuStick || canUseFireArrows) &&
+      inventory.bottle1 &&
+      inventory.maskDeku &&
+      inventory.heroBow &&
+      (inventory.maskZora ||
+        inventory.hookshot ||
+        (inventory.magicBean && inventory.bomb)),
 
     // Deku Palace
     garden: hasPalaceAccess,
@@ -315,6 +323,7 @@ export const getLogic = (inventory: Items) => {
     lensChest: hasNorthAccess,
     lensRock: hasNorthAccess && hasExplosives,
     lensInvisible: hasNorthAccess,
+    songGoron: hasNorthAccess && inventory.maskGoron,
 
     // Path to Snowhead
     snowheadPillar:

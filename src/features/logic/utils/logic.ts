@@ -310,7 +310,7 @@ export const getLogic = (inventory: Partial<InventoryItems>) => {
       hasNorthAccess &&
       hasExplosives &&
       (inventory.maskGoron || (inventory.ocarina && inventory.hookshot)),
-    hotSpringGrotto: hasNorthAccess && canMeltIce,
+    hotSpringGrotto: hasNorthAccess && canMeltIce && hasExplosives,
     springRamp: canClearSnowhead,
     springCave: canClearSnowhead,
     goronRace: canClearSnowhead,

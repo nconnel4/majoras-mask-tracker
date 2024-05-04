@@ -1,6 +1,6 @@
-import { Items } from "@/features/inventory";
+import { InventoryItems } from "@/features/inventory";
 
-export const getLogic = (inventory: Items) => {
+export const getLogic = (inventory: InventoryItems) => {
   // Item Checks
   const hasProjectile =
     inventory.maskZora ||

@@ -1,4 +1,6 @@
-export const inventory = {
+import { InventoryItems } from "../types";
+
+export const inventory: InventoryItems = {
   ocarina: false,
   heroBow: false,
   heroBow2: false,
@@ -19,6 +21,11 @@ export const inventory = {
   hookshot: false,
   gfs: false,
   bottle1: false,
+  bottle2: false,
+  bottle3: false,
+  bottle4: false,
+  bottle5: false,
+  bottle6: false,
   goldDust: false,
   dekuPrincess: false,
   magic: false,

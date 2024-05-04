@@ -1,14 +1,16 @@
 import * as React from "react";
 
-import { inventory } from "../data/inventory.tsx";
-import { Items } from "../types";
+import type { Items } from "@/features/items";
+
+import { inventory } from "../data/inventory";
+import type { InventoryItems } from "../types";
 
 type InventoryAction = {
   type: "toggle";
   payload: keyof Items;
 };
 
-export const InventoryContext = React.createContext<Items>(inventory);
+export const InventoryContext = React.createContext<InventoryItems>(inventory);
 export const InventoryDispatchContext =
   React.createContext<React.Dispatch<InventoryAction> | null>(null);
 
@@ -40,7 +42,10 @@ export const InventoryProvider = ({
   );
 };
 
-const inventoryReducer = (items: Items, action: InventoryAction): Items => {
+const inventoryReducer = (
+  items: InventoryItems,
+  action: InventoryAction,
+): InventoryItems => {
   switch (action.type) {
     case "toggle": {
       // bow

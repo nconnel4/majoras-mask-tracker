@@ -1,6 +1,7 @@
+import "./App.css";
+
 import { Tracker } from "@/pages/Tracker";
 import { AppProvider } from "@/providers/app.tsx";
-import "./App.css";
 
 function App() {
   return (

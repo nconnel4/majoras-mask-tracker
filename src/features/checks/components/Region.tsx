@@ -1,4 +1,4 @@
-import { Region as RegionType } from "@/features/checks/types";
+import { Region as RegionType } from "../types";
 
 type RegionProps = {
   region: RegionType;

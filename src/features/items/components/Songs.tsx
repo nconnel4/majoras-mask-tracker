@@ -1,8 +1,7 @@
-import { InventoryItems } from "@/features/inventory";
-
 import { Item } from "../components/Item";
+import { SectionProps } from "../types";
 
-export const Songs = ({ inventory }: { inventory: InventoryItems }) => {
+export const Songs = ({ inventory }: SectionProps) => {
   return (
     <div className={"songs"}>
       <Item id={"songTime"} active={inventory.songTime} />

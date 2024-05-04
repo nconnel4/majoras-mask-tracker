@@ -10,7 +10,8 @@ type InventoryAction = {
   payload: keyof Items;
 };
 
-export const InventoryContext = React.createContext<InventoryItems>(inventory);
+export const InventoryContext =
+  React.createContext<Partial<InventoryItems>>(inventory);
 export const InventoryDispatchContext =
   React.createContext<React.Dispatch<InventoryAction> | null>(null);
 
@@ -43,9 +44,9 @@ export const InventoryProvider = ({
 };
 
 const inventoryReducer = (
-  items: InventoryItems,
+  items: Partial<InventoryItems>,
   action: InventoryAction,
-): InventoryItems => {
+): Partial<InventoryItems> => {
   switch (action.type) {
     case "toggle": {
       // bow

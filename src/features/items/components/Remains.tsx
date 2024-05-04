@@ -1,8 +1,7 @@
-import { InventoryItems } from "@/features/inventory";
-
+import { SectionProps } from "../types";
 import { Item } from "./Item";
 
-export const Remains = ({ inventory }: { inventory: InventoryItems }) => {
+export const Remains = ({ inventory }: SectionProps) => {
   return (
     <div className="remains">
       <Item id="remainsOdolwa" active={inventory.remainsOdolwa} />

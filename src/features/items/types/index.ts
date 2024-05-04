@@ -1,3 +1,5 @@
+import { InventoryItems } from "@/features/inventory";
+
 export type Item = {
   name: string;
   type: "song" | "item" | "mask" | "remain";
@@ -87,4 +89,8 @@ export type Items = {
   remainsGoht: Item;
   remainsGyorg: Item;
   remainsTwinmold: Item;
+};
+
+export type SectionProps = {
+  inventory: Partial<InventoryItems>;
 };

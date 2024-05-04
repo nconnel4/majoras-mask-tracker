@@ -29,6 +29,7 @@ export const Items = React.memo(
         {inventory.bomb3 && <Item id={"bomb3"} active={inventory.bomb3} />}
         <Item id="bombchu" active={inventory.bombchu} />
         <Item id="dekuStick" active={inventory.dekuStick} />
+        <Item id="dekuNut" active={inventory.dekuNut} />
         <Item id="magicBean" active={inventory.magicBean} />
 
         <Item id="landTitleDeed" active={inventory.landTitleDeed} />
@@ -59,7 +60,7 @@ export const Items = React.memo(
         )}
         {inventory.sword3 && <Item id="sword3" active={inventory.sword3} />}
         {!inventory.mirrorShield && (
-          <Item id="shield" active={inventory.mirrorShield} />
+          <Item id="shield" active={inventory.shield} />
         )}
         {inventory.mirrorShield && (
           <Item id={"mirrorShield"} active={inventory.mirrorShield} />

@@ -146,6 +146,8 @@ export const getLogic = (inventory: Partial<InventoryItems>) => {
       inventory.landTitleDeed ||
       inventory.swampTitleDeed ||
       inventory.mountainTitleDeed ||
+      inventory.oceanTitleDeed ||
+      inventory.landTitleDeed ||
       inventory.letterToKafei ||
       inventory.letterToMama,
     staffRoom: true,

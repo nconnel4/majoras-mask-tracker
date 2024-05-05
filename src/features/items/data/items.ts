@@ -69,472 +69,427 @@ import swampTitleDeed from "../assets/swampTitleDeed.png";
 import remainsTwinmold from "../assets/twinmoldRemains.png";
 import wallet from "../assets/wallet.png";
 import maskZora from "../assets/zoraMask.png";
-import { Item } from "../types";
+import { Items } from "../types";
 
-export const items: Item[] = [
-  {
-    id: "ocarina",
+export const items: Items = {
+  ocarina: {
     name: "Ocarina",
     type: "item",
     image: ocarina,
   },
-  {
-    id: "heroBow",
+  heroBow: {
     name: "Hero Bow",
     type: "item",
     image: heroBow,
     quantity: 30,
   },
-  {
-    id: "heroBow2",
+  heroBow2: {
     name: "Hero Bow",
     type: "item",
     image: heroBow,
     quantity: 40,
   },
-  {
-    id: "heroBow3",
+  heroBow3: {
     name: "Hero Bow",
     type: "item",
     image: heroBow,
     quantity: 50,
   },
-  {
-    id: "fireArrow",
+  fireArrow: {
     name: "Fire Arrows",
     type: "item",
     image: fireArrow,
   },
-  {
-    id: "iceArrow",
+  iceArrow: {
     name: "Ice Arrow",
     type: "item",
     image: iceArrow,
   },
-  {
-    id: "lightArrow",
+  lightArrow: {
     name: "Light Arrow",
     type: "item",
     image: lightArrow,
   },
-  {
-    id: "moonTear",
+  moonTear: {
     name: "Moon's Tear",
     type: "item",
     image: moonTear,
   },
-  {
-    id: "bomb",
+  bomb: {
     name: "Bombs",
     type: "item",
     image: bomb,
     quantity: 20,
   },
-  {
-    id: "bomb2",
+  bomb2: {
     name: "Bombs",
     type: "item",
     image: bomb,
     quantity: 30,
   },
-  {
-    id: "bomb3",
+  bomb3: {
     name: "Bombs",
     type: "item",
     image: bomb,
     quantity: 40,
   },
-  {
-    id: "keg",
+  keg: {
     name: "Powder Keg",
     type: "item",
     image: keg,
   },
-  {
-    id: "magicBean",
+  magicBean: {
     name: "Magic Bean",
     type: "item",
     image: magicBean,
   },
-  {
-    id: "roomKey",
+  roomKey: {
     name: "Room Key",
     type: "item",
     image: roomKey,
   },
-  {
-    id: "letterToKafei",
+  letterToKafei: {
     name: "Letter To Kafei",
     type: "item",
     image: letterToKafei,
   },
-  {
-    id: "landTitleDeed",
+  landTitleDeed: {
     name: "Land Title Deed",
     type: "item",
     image: landTitleDeed,
   },
-  {
-    id: "bottle1",
+
+  bottle1: {
     name: "Bottle",
     type: "item",
     image: bottle,
     quantity: 1,
   },
-  {
-    id: "pictographBox",
+  bottle2: {
+    name: "Bottle",
+    type: "item",
+    image: bottle,
+    quantity: 1,
+  },
+  bottle3: {
+    name: "Bottle",
+    type: "item",
+    image: bottle,
+    quantity: 1,
+  },
+  bottle4: {
+    name: "Bottle",
+    type: "item",
+    image: bottle,
+    quantity: 1,
+  },
+  bottle5: {
+    name: "Bottle",
+    type: "item",
+    image: bottle,
+    quantity: 1,
+  },
+  bottle6: {
+    name: "Bottle",
+    type: "item",
+    image: bottle,
+    quantity: 1,
+  },
+  pictographBox: {
     name: "Pictograph Box",
     type: "item",
     image: pictograph,
   },
-  {
-    id: "lensOfTruth",
+  lensOfTruth: {
     name: "Lens of Truth",
     type: "item",
     image: lensOfTruth,
   },
-  {
-    id: "hookshot",
+  hookshot: {
     name: "Hookshot",
     type: "item",
     image: hookshot,
   },
-  {
-    id: "gfs",
+  gfs: {
     name: "Great Fairy Sword",
     type: "item",
     image: gfs,
   },
-  {
-    id: "swampTitleDeed",
+  swampTitleDeed: {
     name: "Swamp Title Deed",
     type: "item",
     image: swampTitleDeed,
   },
-  {
-    id: "goldDust",
+  goldDust: {
     name: "Gold Dust",
     type: "item",
     image: goldDust,
   },
-  {
-    id: "dekuPrincess",
+  dekuPrincess: {
     name: "Deku Princess",
     type: "item",
     image: dekuPrincess,
   },
-  {
-    id: "sword",
+  sword: {
     name: "Kokiri Sword",
     type: "item",
     image: kokiriSword,
   },
-  {
-    id: "sword2",
+  sword2: {
     name: "Razor Sword",
     type: "item",
     image: razorSword,
   },
-  {
-    id: "sword3",
+  sword3: {
     name: "Gilded Sword",
     type: "item",
     image: gildedSword,
   },
-  {
-    id: "shield",
+  shield: {
     name: "Hylian Shield",
     type: "item",
     image: hylianShield,
   },
-  {
-    id: "mirrorShield",
+  mirrorShield: {
     name: "Mirror Shield",
     type: "item",
     image: mirrorShield,
   },
-  {
-    id: "wallet",
+  wallet: {
     name: "Adult Wallet",
     type: "item",
     image: wallet,
     quantity: 200,
   },
-  {
-    id: "wallet2",
+  wallet2: {
     name: "Giant Wallet",
     type: "item",
     image: wallet,
     quantity: 500,
   },
-  {
-    id: "magic",
+  magic: {
     name: "Magic",
     type: "item",
     image: magic,
   },
-  {
-    id: "mountainTitleDeed",
+  mountainTitleDeed: {
     name: "Mountain Title Deed",
     type: "item",
     image: mountainTitleDeed,
   },
-  {
-    id: "oceanTitleDeed",
+  oceanTitleDeed: {
     name: "Ocean Title Deed",
     type: "item",
     image: oceanTitleDeed,
   },
-  {
-    id: "letterToMama",
+  letterToMama: {
     name: "Letter to Mama",
     type: "item",
     image: letterToMama,
   },
-  {
-    id: "dekuNut",
+  dekuNut: {
     name: "Deku Nut",
     type: "item",
     image: dekuNut,
   },
-  {
-    id: "dekuStick",
+  dekuStick: {
     name: "Deku Stick",
     type: "item",
     image: dekuStick,
   },
-  {
-    id: "bombchu",
+  bombchu: {
     name: "Bombchu",
     type: "item",
     image: bombchu,
   },
-  {
-    id: "maskPostmanHat",
+  maskPostmanHat: {
     name: "Postman's Hat",
     type: "mask",
     image: postmanHat,
   },
-  {
-    id: "maskBlast",
+  maskBlast: {
     name: "Blast Mask",
     type: "mask",
     image: blastMask,
   },
-  {
-    id: "maskAllNight",
+  maskAllNight: {
     name: "All Night Mask",
     type: "mask",
     image: allNightMask,
   },
-  {
-    id: "maskStone",
+  maskStone: {
     name: "Stone Mask",
     type: "mask",
     image: stoneMask,
   },
-  {
-    id: "maskGreatFairy",
+  maskGreatFairy: {
     name: "Great Fairy Mask",
     type: "mask",
     image: greatFairyMask,
   },
-  {
-    id: "maskDeku",
+  maskDeku: {
     name: "Deku Mask",
     type: "mask",
     image: dekuMask,
   },
-  {
-    id: "maskKeaton",
+  maskKeaton: {
     name: "Keaton Mask",
     type: "mask",
     image: keatonMask,
   },
-  {
-    id: "maskBremen",
+  maskBremen: {
     name: "Bremen Mask",
     type: "mask",
     image: maskBremen,
   },
-  {
-    id: "maskBunnyHood",
+  maskBunnyHood: {
     name: "Bunny Hood",
     type: "mask",
     image: maskBunnyHood,
   },
-  {
-    id: "maskDonGero",
+  maskDonGero: {
     name: "Don Gero's Mask",
     type: "mask",
     image: maskDonGero,
   },
-  {
-    id: "maskScents",
+  maskScents: {
     name: "Mask of Scents",
     type: "mask",
     image: maskScents,
   },
-  {
-    id: "maskGoron",
+  maskGoron: {
     name: "Goron Mask",
     type: "mask",
     image: maskGoron,
   },
-  {
-    id: "maskRomani",
+  maskRomani: {
     name: "Romani's Mask",
     type: "mask",
     image: maskRomani,
   },
-  {
-    id: "maskCircusLeader",
+  maskCircusLeader: {
     name: "Circus Leader's Mask",
     type: "mask",
     image: maskCircusLeader,
   },
-  {
-    id: "maskKafei",
+  maskKafei: {
     name: "Kafei Mask",
     type: "mask",
     image: maskKafei,
   },
-  {
-    id: "maskCouples",
+  maskCouples: {
     name: "Couple's Mask",
     type: "mask",
     image: maskCouples,
   },
-  {
-    id: "maskTruth",
+  maskTruth: {
     name: "Mask of Truth",
     type: "mask",
     image: maskTruth,
   },
-  {
-    id: "maskZora",
+  maskZora: {
     name: "Zora Mask",
     type: "mask",
     image: maskZora,
   },
-  {
-    id: "maskKamaro",
+  maskKamaro: {
     name: "Kamaro Mask",
     type: "mask",
     image: maskKamaro,
   },
-  {
-    id: "maskGibdo",
+  maskGibdo: {
     name: "Gibdo Mask",
     type: "mask",
     image: maskGibdo,
   },
-  {
-    id: "maskGaro",
+  maskGaro: {
     name: "Garo Mask",
     type: "mask",
     image: maskGaro,
   },
-  {
-    id: "maskCaptainHat",
+  maskCaptainHat: {
     name: "Captain's Hat",
     type: "mask",
     image: maskCaptainHat,
   },
-  {
-    id: "maskGiant",
+  maskGiant: {
     name: "Giant's Mask",
     type: "mask",
     image: maskGiant,
   },
-  {
-    id: "maskFierceDeity",
+  maskFierceDeity: {
     name: "FierceDeity",
     type: "mask",
     image: maskFierceDeity,
   },
-  {
-    id: "songTime",
+  songTime: {
     name: "Song of Time",
     type: "song",
     image: songTime,
   },
-  {
-    id: "songHealing",
+  songHealing: {
     name: "Song of Healing",
     type: "song",
     image: songHealing,
   },
-  {
-    id: "songEpona",
+  songEpona: {
     name: "Epona Song",
     type: "song",
     image: songEpona,
   },
-  {
-    id: "songSoaring",
+  songSoaring: {
     name: "Song of Soaring",
     type: "song",
     image: songSoaring,
   },
-  {
-    id: "songStorms",
+  songStorms: {
     name: "Song of Storms",
     type: "song",
     image: songStorms,
   },
-  {
-    id: "songSonata",
+  songSonata: {
     name: "Sonata of Awakening",
     type: "song",
     image: songSonata,
   },
-  {
-    id: "songLullaby",
+  songLullaby: {
     name: "Goron Lullaby",
     type: "song",
     image: songLullaby,
   },
-  {
-    id: "songNewWave",
+  songNewWave: {
     name: "New Wave Bossa Nova",
     type: "song",
     image: songNewWave,
   },
-  {
-    id: "songElegy",
+  songElegy: {
     name: "Elegy of Emptiness",
     type: "song",
     image: songElegy,
   },
-  {
-    id: "songOath",
+  songOath: {
     name: "Oath to Order",
     type: "song",
     image: songOath,
   },
-  {
-    id: "remainsOdolwa",
+  remainsOdolwa: {
     name: "Odolwa Remains",
     type: "remain",
     image: remainsOdolwa,
   },
-  {
-    id: "remainsGoht",
+  remainsGoht: {
     name: "Goht Remains",
     type: "remain",
     image: remainsGoht,
   },
-  {
-    id: "remainsGyorg",
+  remainsGyorg: {
     name: "Gyorg Remains",
     type: "remain",
     image: remainsGyorg,
   },
-  {
-    id: "remainsTwinmold",
+  remainsTwinmold: {
     name: "Twinmold Remains",
     type: "remain",
     image: remainsTwinmold,
   },
-];
+};

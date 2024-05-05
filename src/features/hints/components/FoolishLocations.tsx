@@ -1,4 +1,4 @@
-import { RegionSelect } from "@/features/hints/components/RegionSelect.tsx";
+import { RegionSelect } from "../components/RegionSelect.tsx";
 
 export const FoolishLocations = () => {
   return (

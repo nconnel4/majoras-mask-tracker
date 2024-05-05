@@ -1,6 +1,6 @@
-import { Items } from "@/features/inventory";
+import { InventoryItems } from "@/features/inventory";
 
-export const getLogic = (inventory: Items) => {
+export const getLogic = (inventory: Partial<InventoryItems>) => {
   // Item Checks
   const hasProjectile =
     inventory.maskZora ||
@@ -146,6 +146,8 @@ export const getLogic = (inventory: Items) => {
       inventory.landTitleDeed ||
       inventory.swampTitleDeed ||
       inventory.mountainTitleDeed ||
+      inventory.oceanTitleDeed ||
+      inventory.landTitleDeed ||
       inventory.letterToKafei ||
       inventory.letterToMama,
     staffRoom: true,
@@ -308,7 +310,7 @@ export const getLogic = (inventory: Items) => {
       hasNorthAccess &&
       hasExplosives &&
       (inventory.maskGoron || (inventory.ocarina && inventory.hookshot)),
-    hotSpringGrotto: hasNorthAccess && canMeltIce,
+    hotSpringGrotto: hasNorthAccess && canMeltIce && hasExplosives,
     springRamp: canClearSnowhead,
     springCave: canClearSnowhead,
     goronRace: canClearSnowhead,

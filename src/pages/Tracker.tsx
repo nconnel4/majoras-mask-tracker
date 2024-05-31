@@ -1,15 +1,18 @@
 import * as React from "react";
 
-import { RegionChecks, Regions } from "@/features/checks";
+import { Checks, RegionChecks, Regions } from "@/features/checks";
 import { Hints } from "@/features/hints";
 import { InventoryProvider } from "@/features/inventory";
 import { Inventory } from "@/features/items";
 import { LogicProvider } from "@/features/logic";
 import { Map } from "@/features/map";
+import { scrubsS2Settings } from "@/features/settings";
 
 export const Tracker = () => {
   const [region, setRegion] = React.useState("");
-  const [completeChecks, setCompleteChecks] = React.useState<string[]>([]);
+  const [completeChecks, setCompleteChecks] = React.useState<(keyof Checks)[]>(
+    [],
+  );
 
   React.useEffect(() => {
     const handleBeforeUnload = (e: BeforeUnloadEvent) => {
@@ -25,18 +28,8 @@ export const Tracker = () => {
 
   return (
     <div className="tracker">
-      <InventoryProvider
-        initialItems={[
-          "sword",
-          "shield",
-          "ocarina",
-          "songEpona",
-          "songTime",
-          "songSoaring",
-          "dekuNut",
-          "dekuStick",
-        ]}
-      >
+      {/*<CheckProvider initialChecks={scrubsS2Settings.checks}>*/}
+      <InventoryProvider initialItems={scrubsS2Settings.initialItems}>
         <LogicProvider>
           <Inventory />
           {!region && <Regions setRegion={setRegion} />}
@@ -54,6 +47,7 @@ export const Tracker = () => {
           </div>
         </LogicProvider>
       </InventoryProvider>
+      {/*</CheckProvider>*/}
     </div>
   );
 };

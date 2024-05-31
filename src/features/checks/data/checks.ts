@@ -29,7 +29,11 @@ export const checks: Checks = {
 
   // North Clock Town
   nctTree: { name: "North Clock Town Tree", region: "nct" },
-  nctMapTown: { name: "Clock Town Map Purchase", region: "nct" },
+  nctMapTown: {
+    name: "Clock Town Map Purchase",
+    region: "nct",
+    linkedChecks: ["canyonMapTown"],
+  },
   nctMapSwamp: {
     name: "Woodfall Map Purchase",
     region: "nct",
@@ -119,6 +123,7 @@ export const checks: Checks = {
   rswMapSnowhead: {
     name: "Snowhead Map Purchase",
     region: "rsw",
+    linkedChecks: ["northMapSnowhead"],
   },
   swampArchery1: {
     name: "Swamp Archery #1",
@@ -133,7 +138,7 @@ export const checks: Checks = {
   swampBombBag: {
     name: "Biggest Bomb Bag Purchase",
     region: "ssw",
-    linkedChecks: [],
+    linkedChecks: ["northBombBag"],
   },
   kotake: { name: "Kotake", region: "ssw" },
   koume: { name: "Koume", region: "ssw" },
@@ -167,7 +172,15 @@ export const checks: Checks = {
   wftBossKey: { name: "Woodfall Boss Key", region: "wft" },
   wftMainRoomSwitch: { name: "Woodfall Main Room Switch", region: "wft" },
   wftOdolwaHeart: { name: "Odolwa Heart", region: "wft" },
-  songWftBossBlueWarp: { name: "Boss Blue Warp", region: "wft" },
+  songWftBossBlueWarp: {
+    name: "Boss Blue Warp",
+    region: "wft",
+    linkedChecks: [
+      "songShtBossBlueWarp",
+      "songGbtBossBlueWarp",
+      "songSttBossBlueWarp",
+    ],
+  },
 
   // Mountain Village
   darmani: { name: "Darmani", region: "vil" },
@@ -181,8 +194,16 @@ export const checks: Checks = {
   raceGrotto: { name: "Goron Racetrack Grotto", region: "twi" },
   goronRace: { name: "Goron Racetrack", region: "twi" },
   hotSpringGrotto: { name: "Hot Spring Water Grotto", region: "twi" },
-  northMapRanch: { name: "Romani Ranch Purchase", region: "twi" },
-  northMapSnowhead: { name: "Snowhead Map Purchase", region: "twi" },
+  northMapRanch: {
+    name: "Romani Ranch Purchase",
+    region: "twi",
+    linkedChecks: ["milkRoadMapRanch"],
+  },
+  northMapSnowhead: {
+    name: "Snowhead Map Purchase",
+    region: "twi",
+    linkedChecks: ["rswMapSnowhead"],
+  },
   springCave: { name: "Twin Islands Cave Chest", region: "twi" },
   springRamp: { name: "Twin Islands Underwater Ramp", region: "twi" },
 
@@ -223,13 +244,25 @@ export const checks: Checks = {
   songShtBossBlueWarp: {
     name: "Boss Blue Warp",
     region: "sht",
-    linkedChecks: ["songWftBossBlueWarp"],
+    linkedChecks: [
+      "songWftBossBlueWarp",
+      "songGbtBossBlueWarp",
+      "songSttBossBlueWarp",
+    ],
   },
 
   // Milk Road
   gormanRace: { name: "Gorman Bros Race", region: "mr" },
-  milkRoadMapRanch: { name: "Romani Ranch Map Purchase", region: "mr" },
-  milkRoadMapBay: { name: "Great Bay Map Purchase", region: "mr" },
+  milkRoadMapRanch: {
+    name: "Romani Ranch Map Purchase",
+    region: "mr",
+    linkedChecks: ["northMapRanch"],
+  },
+  milkRoadMapBay: {
+    name: "Great Bay Map Purchase",
+    region: "mr",
+    linkedChecks: ["milkRoadMapBay"],
+  },
 
   // Romani Ranch
   alienDefense: { name: "Alien Defense", region: "rr" },
@@ -316,7 +349,15 @@ export const checks: Checks = {
     region: "gbt",
   },
   gbtGyorgHeartContainer: { name: "Gyorg Heart Container", region: "gbt" },
-  songGbtBossBlueWarp: { name: "Boss Blue Warp", region: "gbt" },
+  songGbtBossBlueWarp: {
+    name: "Boss Blue Warp",
+    region: "gbt",
+    linkedChecks: [
+      "songWftBossBlueWarp",
+      "songShtBossBlueWarp",
+      "songGbtBossBlueWarp",
+    ],
+  },
 
   // Path to Ikana
   shiro: { name: "Invisible Soldier (Shiro)", region: "rti" },

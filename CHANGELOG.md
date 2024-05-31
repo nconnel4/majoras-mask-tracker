@@ -14,3 +14,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix incorrect Deku Palace region in checks
 - Fix progressive bottle
 - Fix naming on Odolwa Heart Container to match other bosses
+
+### Security
+- Upgraded vite package

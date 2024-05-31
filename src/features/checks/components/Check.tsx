@@ -5,15 +5,16 @@ import { useContext, useEffect, useState } from "react";
 
 import { LogicContext } from "@/features/logic";
 
-import { Check as CheckType } from "../types";
+import { Checks, PlayerCheck } from "../types";
 
 type CheckProps = {
-  check: CheckType;
+  id: keyof Checks;
+  check: PlayerCheck;
   isComplete: boolean;
   isActive: boolean;
 };
 
-export const Check = ({ check, isComplete, isActive }: CheckProps) => {
+export const Check = ({ id, check, isComplete, isActive }: CheckProps) => {
   const [variant, setVariant] = useState("inactive");
   const logic = useContext(LogicContext);
 
@@ -28,9 +29,9 @@ export const Check = ({ check, isComplete, isActive }: CheckProps) => {
   }, [check, logic, isComplete, isActive]);
 
   return (
-    <div className={clsx("check", variant)} id={check.id}>
+    <div className={clsx("check", variant)} id={id}>
       {check.name}
-      {check.id.startsWith("song") && (
+      {id.startsWith("song") && (
         <FontAwesomeIcon className={"song-icon"} icon={faMusic} />
       )}
     </div>

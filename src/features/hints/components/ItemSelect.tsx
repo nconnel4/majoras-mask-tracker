@@ -18,7 +18,11 @@ export const ItemSelect = ({ name }: ItemSelectProps) => {
               : 0,
         )
         .map((id: string) => {
-          return <option value={id}>{items[id as keyof Items].name}</option>;
+          return (
+            <option value={id} key={id}>
+              {items[id as keyof Items].name}
+            </option>
+          );
         })}
     </select>
   );

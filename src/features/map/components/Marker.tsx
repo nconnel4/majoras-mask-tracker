@@ -8,8 +8,9 @@ import {
 } from "react";
 import * as React from "react";
 
-import { checks, regionChecks } from "@/features/checks";
+import { Checks, checks } from "@/features/checks";
 import { LogicContext } from "@/features/logic";
+import { scrubsS2Settings } from "@/features/settings";
 
 type MarkerProps = {
   id: string;
@@ -23,24 +24,25 @@ export const Marker = ({ id, setRegion, completeChecks }: MarkerProps) => {
   const logic = React.useContext(LogicContext);
 
   useEffect(() => {
-    const regionCheckList = regionChecks[id];
-    const checkList = checks.filter((check) =>
-      regionCheckList.includes(check.id),
+    const checkList = Object.keys(checks).filter(
+      (checkId) =>
+        checks[checkId as keyof Checks].region == id &&
+        scrubsS2Settings.checks.includes(checkId as keyof Checks),
     );
 
     if (checkList.length === 0) {
       setVariant("hidden");
-    } else if (checkList.every((check) => completeChecks.includes(check.id))) {
+    } else if (checkList.every((checkId) => completeChecks.includes(checkId))) {
       setVariant("clear");
     } else if (
       checkList
-        .filter((check) => !completeChecks.includes(check.id))
-        .every((check) => logic[check.id])
+        .filter((checkId) => !completeChecks.includes(checkId))
+        .every((checkId) => logic[checkId])
     ) {
       setVariant("full-clear");
     } else if (
       checkList.some(
-        (check) => logic[check.id] && !completeChecks.includes(check.id),
+        (checkId) => logic[checkId] && !completeChecks.includes(checkId),
       )
     ) {
       setVariant("partial-clear");
@@ -50,7 +52,7 @@ export const Marker = ({ id, setRegion, completeChecks }: MarkerProps) => {
 
     setCheckCount(
       checkList.filter(
-        (check) => logic[check.id] && !completeChecks.includes(check.id),
+        (checkId) => logic[checkId] && !completeChecks.includes(checkId),
       ).length,
     );
   }, [logic, completeChecks, id]);

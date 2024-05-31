@@ -151,11 +151,11 @@ export const checks: Checks = {
   swampRoof: { name: "Tourist Center Roof", region: "ssw" },
 
   // Deku Palace
-  beanGrotto: { name: "Bean Grotto", region: "dp" },
-  beanSalesman: { name: "Bean Salesman", region: "dp" },
-  butler: { name: "Deku Butler", region: "dp" },
-  palaceGarden: { name: "Deku Palace West Garden", region: "dp" },
-  songPalace: { name: "Imprisoned Monkey Song", region: "dp" },
+  beanGrotto: { name: "Bean Grotto", region: "pal" },
+  beanSalesman: { name: "Bean Salesman", region: "pal" },
+  butler: { name: "Deku Butler", region: "pal" },
+  palaceGarden: { name: "Deku Palace West Garden", region: "pal" },
+  songPalace: { name: "Imprisoned Monkey Song", region: "pal" },
 
   // Woodfall
   wfBridge: { name: "Woodfall Bridge", region: "wf" },
@@ -171,7 +171,7 @@ export const checks: Checks = {
   wftHeroBow: { name: "Hero Bow Chest", region: "wft" },
   wftBossKey: { name: "Woodfall Boss Key", region: "wft" },
   wftMainRoomSwitch: { name: "Woodfall Main Room Switch", region: "wft" },
-  wftOdolwaHeart: { name: "Odolwa Heart", region: "wft" },
+  wftOdolwaHeart: { name: "Odolwa Heart Container", region: "wft" },
   songWftBossBlueWarp: {
     name: "Boss Blue Warp",
     region: "wft",

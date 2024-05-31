@@ -103,6 +103,34 @@ const inventoryReducer = (
         return { ...items, wallet: false, wallet2: false };
       }
 
+      // bottle
+      if (action.payload == "bottle1" && items.bottle1) {
+        return { ...items, bottle2: true };
+      }
+      if (action.payload == "bottle2") {
+        return { ...items, bottle3: true };
+      }
+      if (action.payload == "bottle3") {
+        return { ...items, bottle4: true };
+      }
+      if (action.payload == "bottle4") {
+        return { ...items, bottle5: true };
+      }
+      if (action.payload == "bottle5") {
+        return { ...items, bottle6: true };
+      }
+      if (action.payload == "bottle6") {
+        return {
+          ...items,
+          bottle1: false,
+          bottle2: false,
+          bottle3: false,
+          bottle4: false,
+          bottle5: false,
+          bottle6: false,
+        };
+      }
+
       return { ...items, [action.payload]: !items[action.payload] };
     }
 

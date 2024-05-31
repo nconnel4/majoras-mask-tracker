@@ -136,7 +136,7 @@ export const scrubsS2Settings: Setting = {
     "hotSpringGrotto",
     "northMapSnowhead",
     "northMapRanch",
-    "springGrotto",
+    "springCave",
     "springRamp",
 
     // Goron Village

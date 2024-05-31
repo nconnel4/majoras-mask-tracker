@@ -34,10 +34,18 @@ export const Items = React.memo(({ inventory }: SectionProps) => {
       <Item id="gfs" active={inventory.gfs} />
       <Item id="swampTitleDeed" active={inventory.swampTitleDeed} />
       {!inventory.bottle2 && <Item id="bottle1" active={inventory.bottle1} />}
-      {inventory.bottle2 && <Item id="bottle2" active={inventory.bottle2} />}
-      {inventory.bottle3 && <Item id="bottle3" active={inventory.bottle3} />}
-      {inventory.bottle4 && <Item id="bottle4" active={inventory.bottle4} />}
-      {inventory.bottle5 && <Item id="bottle5" active={inventory.bottle5} />}
+      {inventory.bottle2 && !inventory.bottle3 && (
+        <Item id="bottle2" active={inventory.bottle2} />
+      )}
+      {inventory.bottle3 && !inventory.bottle4 && (
+        <Item id="bottle3" active={inventory.bottle3} />
+      )}
+      {inventory.bottle4 && !inventory.bottle5 && (
+        <Item id="bottle4" active={inventory.bottle4} />
+      )}
+      {inventory.bottle5 && !inventory.bottle6 && (
+        <Item id="bottle5" active={inventory.bottle5} />
+      )}
       {inventory.bottle6 && <Item id="bottle6" active={inventory.bottle6} />}
       <Item id="goldDust" active={inventory.goldDust} />
       <Item id="dekuPrincess" active={inventory.dekuPrincess} />

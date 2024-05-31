@@ -1,17 +1,17 @@
 import * as React from "react";
 
 import { LogicContext } from "@/features/logic";
+import { scrubsS2Settings } from "@/features/settings";
 
 import { Check } from "../components/Check";
 import { checks } from "../data/checks";
-import { regionChecks as regionCheckList } from "../data/regions";
-import { Check as CheckType } from "../types";
+import { Checks } from "../types";
 
 type RegionChecksProps = {
   region: string;
   setRegion: React.Dispatch<React.SetStateAction<string>>;
-  completeChecks: string[];
-  setCompleteChecks: React.Dispatch<React.SetStateAction<string[]>>;
+  completeChecks: (keyof Checks)[];
+  setCompleteChecks: React.Dispatch<React.SetStateAction<(keyof Checks)[]>>;
 };
 
 export const RegionChecks = ({
@@ -20,31 +20,39 @@ export const RegionChecks = ({
   completeChecks,
   setCompleteChecks,
 }: RegionChecksProps) => {
-  const [regionChecks, setRegionChecks] = React.useState<CheckType[]>([]);
+  const [regionChecks, setRegionChecks] = React.useState<(keyof Checks)[]>([]);
   const logic = React.useContext(LogicContext);
 
   React.useEffect(() => {
-    const checkList = regionCheckList[region];
-    setRegionChecks(
-      checkList.map((check) => {
-        const lookup = checks.find((c) => c.id === check);
-        if (lookup === undefined) {
-          throw new TypeError(`${check} was not found in master check list.`);
-        }
-
-        return lookup;
-      }),
+    const checkList = Object.keys(checks).filter(
+      (checkId) =>
+        checks[checkId as keyof Checks].region == region &&
+        scrubsS2Settings.checks.includes(checkId as keyof Checks),
     );
+
+    setRegionChecks(checkList as (keyof Checks)[]);
   }, [region, completeChecks]);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (completeChecks.includes(e.currentTarget.id)) {
-      setCompleteChecks(
-        completeChecks.filter((check) => check !== e.currentTarget.id),
-      );
+    const id = e.currentTarget.id as keyof Checks;
+    const selectedCheck = checks[id];
+    let completeChecksCopy: (keyof Checks)[] = [...completeChecks];
+
+    if (completeChecksCopy.includes(id)) {
+      completeChecksCopy = completeChecksCopy.filter((check) => check !== id);
+      selectedCheck?.linkedChecks?.forEach((linkedCheck) => {
+        completeChecksCopy = completeChecksCopy.filter(
+          (check) => check !== linkedCheck,
+        );
+      });
     } else {
-      setCompleteChecks([...completeChecks, e.currentTarget.id]);
+      completeChecksCopy.push(id);
+      selectedCheck?.linkedChecks?.forEach((linkedCheck) => {
+        completeChecksCopy.push(linkedCheck);
+      });
     }
+
+    setCompleteChecks(completeChecksCopy);
   };
 
   return (
@@ -52,16 +60,21 @@ export const RegionChecks = ({
       <button key="reset" id="reset-btn" onClick={() => setRegion("")}>
         <div className="check">Return to Regions</div>{" "}
       </button>
-      {regionChecks.map((check) => {
-        return (
-          <button key={check.id} id={check.id} onClick={handleClick}>
-            <Check
-              check={check}
-              isActive={logic[check.id]}
-              isComplete={completeChecks.includes(check.id)}
-            />
-          </button>
-        );
+      {regionChecks.map((checkId) => {
+        const check = checks[checkId];
+
+        if (check) {
+          return (
+            <button key={checkId} onClick={handleClick} id={checkId}>
+              <Check
+                id={checkId}
+                check={check}
+                isActive={logic[checkId]}
+                isComplete={completeChecks.includes(checkId)}
+              />
+            </button>
+          );
+        }
       })}
     </div>
   );

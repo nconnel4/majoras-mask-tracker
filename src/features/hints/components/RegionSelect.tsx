@@ -15,7 +15,11 @@ export const RegionSelect = ({ name }: RegionSelectProps) => {
           return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
         })
         .map((region) => {
-          return <option value={region.id}>{region.name}</option>;
+          return (
+            <option value={region.id} key={region.id}>
+              {region.name}
+            </option>
+          );
         })}
     </select>
   );

@@ -1,13 +1,18 @@
+import { Checks } from "@/features/checks";
 import { InventoryItems } from "@/features/inventory";
 
-export const getLogic = (inventory: Partial<InventoryItems>) => {
+type Logic = {
+  [K in keyof Checks]: boolean;
+};
+
+export const getLogic = (inventory: InventoryItems): Logic => {
   // Item Checks
   const hasProjectile =
     inventory.maskZora ||
     inventory.heroBow ||
     inventory.hookshot ||
     (inventory.maskDeku && inventory.magic);
-  const hasLongProjectile = inventory.hookshot || inventory.heroBow;
+  const hasLongProjectile = inventory?.hookshot || inventory.heroBow;
   const hasExplosives = inventory.bomb || inventory.maskBlast;
   const canUseFireArrows =
     inventory.heroBow && inventory.fireArrow && inventory.magic;
@@ -23,7 +28,8 @@ export const getLogic = (inventory: Partial<InventoryItems>) => {
   const hasSwampAcess =
     (inventory.maskDeku &&
       (inventory.bottle1 || inventory.hookshot || inventory.heroBow)) ||
-    inventory.maskZora;
+    inventory.maskZora ||
+    inventory.pictographBox;
   const hasPalaceAccess = hasSwampAcess && inventory.maskDeku;
   const hasWoodfallTempleAccess =
     inventory.maskDeku &&
@@ -32,14 +38,13 @@ export const getLogic = (inventory: Partial<InventoryItems>) => {
     hasSwampAcess;
   const canClearWoodfallTemple = hasWoodfallTempleAccess && inventory.heroBow;
   const hasCoastAccess = inventory.ocarina && inventory.songEpona;
-  const canClearOceanSpider =
-    hasCoastAccess && inventory.hookshot && hasExplosives && canUseFireArrows;
   const hasZoraHallAccess = hasCoastAccess && inventory.maskZora;
   const hasPirateFortressAccess = hasCoastAccess && inventory.maskZora;
   const hasPFSewerAccess = hasPirateFortressAccess && inventory.maskGoron;
   const hasPFInteriorAccess =
     hasPirateFortressAccess && (inventory.maskGoron || inventory.hookshot);
   const hasGreatBayTempleAccess =
+    hasCoastAccess &&
     inventory.maskZora &&
     inventory.ocarina &&
     inventory.songNewWave &&
@@ -57,12 +62,12 @@ export const getLogic = (inventory: Partial<InventoryItems>) => {
     inventory.songLullaby;
   const canClearSnowhead = hasSnowheadAccess && canUseFireArrows;
   const hasGraveyardAccess = inventory.ocarina && inventory.songEpona;
-  const hasCanyonAccess =
+  const hasLowerCanyonAccess =
     hasGraveyardAccess &&
     inventory.hookshot &&
     (inventory.maskGibdo || inventory.maskGaro);
-  const hasUpperCanyonAccess = hasCanyonAccess && canUseIceArrows;
-  const hasShrineAccess = hasCanyonAccess && canUseLightArrows;
+  const hasUpperCanyonAccess = hasLowerCanyonAccess && canUseIceArrows;
+  const hasShrineAccess = hasLowerCanyonAccess && canUseLightArrows;
   const hasWellAccess =
     hasUpperCanyonAccess && inventory.maskGibdo && inventory.bottle1;
   const hasIkanaCastleAccess =
@@ -93,25 +98,26 @@ export const getLogic = (inventory: Partial<InventoryItems>) => {
     strawRoof: inventory.hookshot || (inventory.maskDeku && inventory.moonTear),
     moonTearTrade: inventory.moonTear,
     sctTower: inventory.hookshot || (inventory.maskDeku && inventory.moonTear),
-    mailbox: inventory.maskPostmanHat,
+    sctMailbox: inventory.maskPostmanHat,
 
     // NorthClockTown
     nctTree: true,
-    mapTown: hasProjectile,
-    mapSwamp: hasProjectile,
+    nctMapTown: hasProjectile,
+    nctMapSwamp: hasProjectile,
     strayFairyHuman: true,
     strayFairyTransformation:
       inventory.maskDeku || inventory.maskZora || inventory.maskGoron,
     bomberKids: hasProjectile,
     dekuPlayground: inventory.maskDeku,
-    keaton: inventory.maskKeaton,
+    nctKeaton: inventory.maskKeaton,
     oldLady: true,
+    nctMailbox: inventory.maskPostmanHat,
 
     // West Clock Town
     bombBag: true,
     bigBombBag: true,
     swordsmanSchool: true,
-    postman: inventory.maskBunnyHood,
+    postmanGame: inventory.maskBunnyHood,
     bank1: true,
     bank2: inventory.wallet,
     bank3: inventory.wallet2,
@@ -119,14 +125,15 @@ export const getLogic = (inventory: Partial<InventoryItems>) => {
     rosaSisters: inventory.maskKamaro,
 
     // East Clock Town
-    sewer: hasProjectile && hasExplosives,
-    madamAroma: true,
+    bomberHideout: hasProjectile && hasExplosives,
+    madameAroma: true,
     ectChest: true,
     honeyDarling:
       inventory.bomb ||
       inventory.heroBow ||
       (inventory.maskDeku && inventory.magic),
-    townArchery: inventory.heroBow,
+    townArchery1: inventory.heroBow,
+    townArchery2: inventory.heroBow,
     chestGame: inventory.maskGoron,
     mayor: inventory.maskCouples,
     aromaBar: inventory.letterToMama && inventory.maskKafei,
@@ -137,9 +144,10 @@ export const getLogic = (inventory: Partial<InventoryItems>) => {
       inventory.maskZora &&
       inventory.maskRomani &&
       inventory.ocarina,
+    ectMailbox: inventory.maskPostmanHat,
 
     // Stock Pot Inn
-    stockPotKey: true,
+    innReservation: true,
     midnightMeeting:
       inventory.maskKafei && (inventory.maskDeku || inventory.roomKey),
     toiletHand:
@@ -157,16 +165,16 @@ export const getLogic = (inventory: Partial<InventoryItems>) => {
 
     // Termina Field
     telescope: hasProjectile,
-    dodongos: true,
+    dodongoGrotto: true,
     pillarGrotto: true,
     businessScrub: inventory.wallet,
     grassChest: true,
     grassGrotto: true,
     stump: inventory.hookshot || (inventory.magicBean && inventory.bottle1),
     peahat: true,
-    water: inventory.maskZora,
+    tfUnderwaterChest: inventory.maskZora,
     bioBaba: inventory.maskZora && (hasExplosives || inventory.maskGoron),
-    gossips:
+    gossipStones:
       inventory.ocarina &&
       ((inventory.maskDeku && inventory.songSonata) ||
         (inventory.maskZora && inventory.songNewWave) ||
@@ -182,31 +190,39 @@ export const getLogic = (inventory: Partial<InventoryItems>) => {
     // Road to Southern Swamp
     rswGrotto: true,
     rswTree: hasProjectile,
-    mapSnowhead: hasProjectile,
+    rswMapSwamp: hasProjectile,
+    rswMapSnowhead: hasProjectile,
     swampArchery1: inventory.heroBow,
     swampArchery2: inventory.heroBow,
 
     // Southern Swamp
-    roof: inventory.landTitleDeed && inventory.maskDeku,
+    swampBombBag:
+      hasNorthAccess &&
+      inventory.moonTear &&
+      inventory.landTitleDeed &&
+      inventory.swampTitleDeed &&
+      inventory.maskDeku &&
+      inventory.wallet,
+    swampRoof: inventory.landTitleDeed && inventory.maskDeku,
     woodsGrotto: true,
     koume: true,
     kotake: inventory.bottle1,
-    swampGrotto: hasSwampAcess,
-    contest: inventory.pictographBox,
+    swampGrotto: hasSwampAcess && (inventory.maskDeku || inventory.maskZora),
+    pictographContest: inventory.pictographBox,
     landTitleDeed: inventory.landTitleDeed,
     boatArchery: canClearWoodfallTemple,
     swampSpiderHouse:
       hasSwampAcess &&
       (inventory.dekuStick || canUseFireArrows) &&
       inventory.bottle1 &&
-      inventory.maskDeku &&
-      inventory.heroBow &&
       (inventory.maskZora ||
-        inventory.hookshot ||
-        (inventory.magicBean && inventory.bomb)),
+        (inventory.maskDeku &&
+          (inventory.maskGoron ||
+            inventory.hookshot ||
+            (inventory.magicBean && inventory.bomb)))),
 
     // Deku Palace
-    garden: hasPalaceAccess,
+    palaceGarden: hasPalaceAccess,
     beanGrotto: hasPalaceAccess && (inventory.hookshot || canUseMagicBean),
     beanSalesman: hasPalaceAccess,
     butler:
@@ -218,92 +234,35 @@ export const getLogic = (inventory: Partial<InventoryItems>) => {
     wfOwl: hasPalaceAccess,
     wfBridge: hasPalaceAccess,
 
-    // Milk Road
-    mapRanch: hasProjectile,
-    mapBay: hasProjectile,
-    gormanRace: inventory.ocarina && inventory.songEpona,
-
-    // Romani Ranch
-    dogChest: canUseMagicBean || inventory.maskZora || inventory.hookshot,
-    dogRace: inventory.maskTruth,
-    chicks: inventory.maskBremen,
-    aliens: inventory.heroBow && canUseKeg,
-    cremia: inventory.heroBow && canUseKeg,
-    songRomaniGame: canUseKeg,
-
-    // Great Bay Coast
-    coastGrotto: hasCoastAccess,
-    labFish: hasCoastAccess && inventory.bottle1,
-    mapCanyon: hasCoastAccess && hasLongProjectile,
-    coastLedge:
-      hasCoastAccess &&
-      canUseMagicBean &&
-      inventory.hookshot &&
-      inventory.ocarina,
-    mikau: hasCoastAccess && inventory.ocarina && inventory.songHealing,
-    fisherman: canClearGreatBayTemple,
-    oceanSpider: canClearOceanSpider,
-    oceanSpiderChest:
-      hasExplosives &&
-      inventory.hookshot &&
-      inventory.heroBow &&
-      inventory.maskCaptainHat,
-
-    // Zora Cape
-    ledge1: hasCoastAccess && inventory.hookshot,
-    ledge2: hasCoastAccess && inventory.hookshot,
-    beaver: hasCoastAccess && inventory.hookshot && inventory.maskZora,
-    likeLike: hasCoastAccess && inventory.maskZora,
-    capeGrotto: hasCoastAccess && (hasExplosives || inventory.maskGoron),
-    capeWater: hasCoastAccess && inventory.maskZora,
-
-    // Zora Hall
-    torches: hasZoraHallAccess && canUseFireArrows,
-    evan: hasZoraHallAccess,
-    luluLedge:
-      hasZoraHallAccess &&
-      inventory.mountainTitleDeed &&
-      inventory.maskGoron &&
-      inventory.maskDeku,
-    mountainTitleDeed:
-      hasZoraHallAccess && inventory.mountainTitleDeed && inventory.maskGoron,
-
-    // PinnacleRock
-    upperPR: hasPirateFortressAccess,
-    lowerPR: hasPirateFortressAccess,
-    seahorse:
-      hasPirateFortressAccess && inventory.pictographBox && inventory.bottle1,
-
-    // Pirate's Fortress Exterior
-    sandChest: hasPirateFortressAccess,
-    logChest: hasPirateFortressAccess,
-    cornerChest: hasPirateFortressAccess,
-
-    // Pirate's Fortress Sewer
-    maze: hasPFSewerAccess,
-    shallowChest: hasPFSewerAccess,
-    deepChest: hasPFSewerAccess,
-    cage: hasPFSewerAccess,
-
-    // Pirate's Fortress Interior
-    tank: hasPFInteriorAccess && inventory.hookshot,
-    upperPF: hasPFInteriorAccess && inventory.hookshot,
-    lowerPF: hasPFInteriorAccess,
-    hookshotChest: hasPFInteriorAccess && hasProjectile,
-    guardChest: hasPFInteriorAccess && inventory.hookshot,
+    // Woodfall Temple
+    wftEntrance: hasWoodfallTempleAccess,
+    wftDarkRoom:
+      hasWoodfallTempleAccess && (inventory.dekuStick || canUseFireArrows),
+    wftMainRoomSwitch: hasWoodfallTempleAccess,
+    wftCompass: hasWoodfallTempleAccess,
+    wftMap: hasWoodfallTempleAccess,
+    wftSmallKey: hasWoodfallTempleAccess,
+    wftHeroBow: hasWoodfallTempleAccess,
+    wftBossKey: canClearWoodfallTemple,
+    wftOdolwaHeart: canClearWoodfallTemple,
+    songWftBossBlueWarp: canClearWoodfallTemple,
 
     // Mountain Village
     smithy1: hasNorthAccess && canMeltIce && inventory.wallet,
     smithy2:
       hasNorthAccess && canMeltIce && inventory.goldDust && inventory.bottle1,
-    hugo:
+    hungryGoron:
       hasNorthAccess &&
       inventory.maskGoron &&
       inventory.magic &&
       (canUseFireArrows || inventory.songLullaby),
     springWaterfall: canClearSnowhead,
     springGrotto: canClearSnowhead,
-    darmani: canUseLens && inventory.songHealing && inventory.ocarina,
+    darmani:
+      hasNorthAccess &&
+      canUseLens &&
+      inventory.songHealing &&
+      inventory.ocarina,
 
     // Twin Islands
     raceGrotto:
@@ -311,6 +270,8 @@ export const getLogic = (inventory: Partial<InventoryItems>) => {
       hasExplosives &&
       (inventory.maskGoron || (inventory.ocarina && inventory.hookshot)),
     hotSpringGrotto: hasNorthAccess && canMeltIce && hasExplosives,
+    northMapRanch: hasNorthAccess && hasProjectile,
+    northMapSnowhead: hasNorthAccess && hasProjectile,
     springRamp: canClearSnowhead,
     springCave: canClearSnowhead,
     goronRace: canClearSnowhead,
@@ -320,7 +281,7 @@ export const getLogic = (inventory: Partial<InventoryItems>) => {
       hasNorthAccess && inventory.maskDeku && inventory.swampTitleDeed,
     swampTitleDeed:
       hasNorthAccess && inventory.maskDeku && inventory.swampTitleDeed,
-    scrubBombBag: hasNorthAccess && inventory.maskGoron && inventory.wallet,
+    northBombBag: hasNorthAccess && inventory.maskGoron && inventory.wallet,
     kegTrial: hasNorthAccess && canUseFireArrows && inventory.maskGoron,
     lensChest: hasNorthAccess,
     lensRock: hasNorthAccess && hasExplosives,
@@ -338,6 +299,129 @@ export const getLogic = (inventory: Partial<InventoryItems>) => {
     snowheadGrotto:
       hasNorthAccess && inventory.maskGoron && inventory.magic && hasExplosives,
 
+    // Snowhead Temple,
+    shtBridge: hasSnowheadAccess && (canUseFireArrows || inventory.hookshot),
+    shtMap: hasSnowheadAccess,
+    shtMapLedge: hasSnowheadAccess && (canUseFireArrows || inventory.hookshot),
+    shtCompass: hasSnowheadAccess,
+    shtIcePuzzle: hasSnowheadAccess && canUseFireArrows,
+    shtTwinLower: hasSnowheadAccess,
+    shtTwinUpper:
+      hasSnowheadAccess &&
+      (inventory.hookshot || inventory.maskZora || canUseFireArrows),
+    shtBasement: hasSnowheadAccess,
+    shtPillarFreezards: hasSnowheadAccess && canUseFireArrows,
+    shtIcicleRoom:
+      hasSnowheadAccess &&
+      (canUseFireArrows || hasExplosives || inventory.hookshot),
+    shtIcicleRoomWall:
+      hasSnowheadAccess &&
+      (canUseFireArrows || inventory.hookshot || hasExplosives),
+    shtFireArrows:
+      hasSnowheadAccess &&
+      (canUseFireArrows || hasExplosives || inventory.hookshot),
+    shtMainRoomWall:
+      hasSnowheadAccess && (canUseFireArrows || inventory.hookshot),
+    shtBossKey: canClearSnowhead,
+    shtGohtHeart: canClearSnowhead,
+    songShtBossBlueWarp: canClearSnowhead,
+
+    // Milk Road
+    milkRoadMapRanch: hasProjectile,
+    milkRoadMapBay: hasProjectile,
+    gormanRace: inventory.ocarina && inventory.songEpona,
+
+    // Romani Ranch
+    dogRaceChest: canUseMagicBean || inventory.maskZora || inventory.hookshot,
+    dogRace: inventory.maskTruth,
+    grog: inventory.maskBremen,
+    alienDefense: inventory.heroBow && canUseKeg,
+    cremia: inventory.heroBow && canUseKeg,
+    songRomaniGame: canUseKeg,
+
+    // Great Bay Coast
+    coastGrotto: hasCoastAccess,
+    labFish: hasCoastAccess && inventory.bottle1,
+    coastMapBay: hasCoastAccess && hasLongProjectile,
+    coastMapCanyon: hasCoastAccess && hasLongProjectile,
+    coastLedge:
+      hasCoastAccess &&
+      canUseMagicBean &&
+      inventory.hookshot &&
+      inventory.ocarina,
+    mikau: hasCoastAccess && inventory.ocarina && inventory.songHealing,
+    fishermanGame: canClearGreatBayTemple,
+    oceanSpider:
+      hasCoastAccess && inventory.hookshot && hasExplosives && canUseFireArrows,
+    oceanSpiderChest:
+      hasCoastAccess &&
+      hasExplosives &&
+      inventory.hookshot &&
+      inventory.heroBow &&
+      inventory.maskCaptainHat,
+    songZoraEggs:
+      hasPFInteriorAccess && inventory.bottle1 && inventory.hookshot,
+
+    // Zora Cape
+    capeLedgeLower: hasCoastAccess && inventory.hookshot,
+    capeLedgeUpper: hasCoastAccess && inventory.hookshot,
+    beavers1: hasCoastAccess && inventory.hookshot && inventory.maskZora,
+    likeLike: hasCoastAccess && inventory.maskZora,
+    capeGrotto: hasCoastAccess && (hasExplosives || inventory.maskGoron),
+    capeUnderwaterChest: hasCoastAccess && inventory.maskZora,
+
+    // Zora Hall
+    stageLights: hasZoraHallAccess && canUseFireArrows,
+    evan: hasZoraHallAccess,
+    luluLedge:
+      hasZoraHallAccess &&
+      inventory.mountainTitleDeed &&
+      inventory.maskGoron &&
+      inventory.maskDeku,
+    mountainTitleDeed:
+      hasZoraHallAccess && inventory.mountainTitleDeed && inventory.maskGoron,
+
+    // PinnacleRock
+    prUpperChest: hasPirateFortressAccess,
+    prLowerChest: hasPirateFortressAccess,
+    prSeahorses:
+      hasPirateFortressAccess && inventory.pictographBox && inventory.bottle1,
+
+    // Pirate's Fortress Exterior
+    pfeSandChest: hasPirateFortressAccess,
+    pfeLogChest: hasPirateFortressAccess,
+    pfeCornerChest: hasPirateFortressAccess,
+
+    // Pirate's Fortress Sewer
+    pfsMazeChest: hasPFSewerAccess,
+    pfsShallowChest: hasPFSewerAccess,
+    pfsDeepChest: hasPFSewerAccess,
+    pfsCageChest: hasPFSewerAccess,
+
+    // Pirate's Fortress Interior
+    tankChest: hasPFInteriorAccess && inventory.hookshot,
+    pfiUpperChest: hasPFInteriorAccess && inventory.hookshot,
+    pfiLowerChest: hasPFInteriorAccess,
+    hookshotChest:
+      hasPFInteriorAccess &&
+      (inventory.heroBow || (inventory.maskDeku && inventory.magic)),
+    guardChest: hasPFInteriorAccess && inventory.hookshot,
+
+    // Great Bay Temple
+    gbtEntranceTorches: hasGreatBayTempleAccess,
+    gbtMapChest: hasGreatBayTempleAccess,
+    gbtBioBabas: hasGreatBayTempleAccess,
+    gbtCompassChest: hasGreatBayTempleAccess,
+    gbtSmallKeyChest: hasGreatBayTempleAccess,
+    gbtIceArrow: hasGreatBayTempleAccess,
+    gbtGreenValve: hasGreatBayTempleAccess && canUseIceArrows,
+    gbtWaterwheelLower: hasGreatBayTempleAccess && canUseIceArrows,
+    gbtWaterwheelUpper: hasGreatBayTempleAccess && canUseIceArrows,
+    gbtBossKey: hasGreatBayTempleAccess && canUseIceArrows,
+    gbtSeesawRoom: canClearGreatBayTemple,
+    gbtGyorgHeartContainer: canClearGreatBayTemple,
+    songGbtBossBlueWarp: canClearGreatBayTemple,
+
     // Road to Ikana
     ikanaPillar: inventory.hookshot,
     ikanaGrotto: inventory.maskGoron,
@@ -345,22 +429,31 @@ export const getLogic = (inventory: Partial<InventoryItems>) => {
 
     // Graveyard
     graveyardGrotto: hasGraveyardAccess && hasExplosives,
-    keeta: hasGraveyardAccess && inventory.ocarina && inventory.songSonata,
-    graveBats: hasGraveyardAccess && inventory.maskCaptainHat,
-    ironKnuckle:
+    keetaChest:
+      hasGraveyardAccess &&
+      inventory.ocarina &&
+      inventory.songSonata &&
+      inventory.heroBow,
+    graveBatsChest: hasGraveyardAccess && inventory.maskCaptainHat,
+    ironKnuckleChest:
       hasGraveyardAccess && inventory.maskCaptainHat && hasExplosives,
-    dampe: hasGraveyardAccess && inventory.maskCaptainHat && inventory.heroBow,
+    dampeDigging:
+      hasGraveyardAccess &&
+      inventory.maskCaptainHat &&
+      (inventory.heroBow || inventory.maskZora),
     songGrave: hasGraveyardAccess && inventory.maskCaptainHat,
 
     // Ikana Canyon
     canyonLedge:
-      hasCanyonAccess &&
+      hasLowerCanyonAccess &&
       inventory.maskDeku &&
       inventory.maskZora &&
       inventory.oceanTitleDeed,
+    canyonMapTown: hasUpperCanyonAccess,
+    canyonMapStoneTower: hasUpperCanyonAccess,
     oceanTitleDeed:
-      hasCanyonAccess && inventory.maskZora && inventory.oceanTitleDeed,
-    shrineGrotto: hasCanyonAccess,
+      hasLowerCanyonAccess && inventory.maskZora && inventory.oceanTitleDeed,
+    secretShrineGrotto: hasLowerCanyonAccess,
     pamela:
       hasUpperCanyonAccess &&
       inventory.ocarina &&
@@ -368,18 +461,13 @@ export const getLogic = (inventory: Partial<InventoryItems>) => {
       inventory.songHealing,
     poeHut: hasUpperCanyonAccess,
 
-    // SecretShrine
-    shrineDinolfos: hasShrineAccess,
-    shrineGaroMaster: hasShrineAccess,
-    shrineWizzrobe: hasShrineAccess,
-    shrineWart: hasShrineAccess,
-    shrineClear: hasShrineAccess,
-
     // Beneath the Well
     leftWell: hasWellAccess && (inventory.wallet || inventory.maskScents),
     rightWell: hasWellAccess && (inventory.maskDeku || canUseLightArrows),
     mirrorShieldChest:
-      (hasWellAccess && inventory.maskDeku) ||
+      (hasWellAccess &&
+        (inventory.maskDeku || canUseLightArrows) &&
+        inventory.bomb) ||
       (hasUpperCanyonAccess && canUseLightArrows && canUseFireArrows),
 
     // Ikana Castle
@@ -390,66 +478,94 @@ export const getLogic = (inventory: Partial<InventoryItems>) => {
       canUseLens,
     songIgos:
       hasIkanaCastleAccess &&
-      (canUseLightArrows ||
-        (canUseFireArrows && canUseLens && canUseKeg && inventory.maskDeku)),
+      canUseFireArrows &&
+      inventory.mirrorShield &&
+      (canUseLightArrows || (canUseLens && canUseKeg && inventory.maskDeku)),
 
     // Stone Tower
     stLeft: hasInvertedStoneTowerAccess && canUseMagicBean,
     stCenter: hasInvertedStoneTowerAccess && canUseMagicBean,
     stRight: hasInvertedStoneTowerAccess && canUseMagicBean,
 
-    // Woodfall Temple
-    dragonflies: hasWoodfallTempleAccess,
-    wfSmallKey: hasWoodfallTempleAccess,
-    snappers: hasWoodfallTempleAccess,
-    wtfDinolfos: hasWoodfallTempleAccess,
-    odolwa: canClearWoodfallTemple,
-    songWoodfallBBW: canClearWoodfallTemple,
+    //
 
-    // Snowhead Temple,
-    shtBridge:
-      hasSnowheadAccess &&
-      (canUseFireArrows || hasExplosives || inventory.hookshot),
-    shtMap: hasSnowheadAccess,
-    shtTwinLower: hasSnowheadAccess,
-    shtIcicle:
-      hasSnowheadAccess &&
-      (canUseFireArrows || hasExplosives || inventory.hookshot),
-    shtWizzrobe:
-      hasSnowheadAccess &&
-      (canUseFireArrows || hasExplosives || inventory.hookshot),
-    goht: canClearSnowhead,
-    songSnowheadBBW: canClearSnowhead,
-
-    // Great Bay Temple
-    gbtMap: hasGreatBayTempleAccess,
-    gbtCompass: hasGreatBayTempleAccess,
-    gbtUnderwater: hasGreatBayTempleAccess,
-    gbtWart: hasGreatBayTempleAccess,
-    gyorg: canClearGreatBayTemple,
-    songGreatBayBBW: canClearGreatBayTemple,
-
-    // Stone Tower Temple
-    sttCompass:
+    //
+    // // Stone Tower Temple
+    sttCompassChest:
       hasStoneTowerTempleAccess &&
-      (canUseLightArrows || (inventory.mirrorShield && inventory.maskZora)),
-    sttEyegoreRoom:
+      (canUseLightArrows ||
+        (inventory.mirrorShield &&
+          inventory.maskZora &&
+          inventory.maskGoron &&
+          hasExplosives)),
+    sttEyegoreRoomChest:
       hasStoneTowerTempleAccess &&
       ((canUseLightArrows && inventory.maskZora) ||
         (hasExplosives && inventory.maskGoron)),
-    sttMap:
+    sttMapChest:
       hasStoneTowerTempleAccess &&
       (((inventory.mirrorShield || canUseLightArrows) &&
         hasExplosives &&
         inventory.maskGoron) ||
         (canUseLightArrows && inventory.maskZora)),
+    sttStatueEye: hasStoneTowerTempleAccess,
+    sttBasementLedge:
+      hasStoneTowerTempleAccess &&
+      ((inventory.maskGoron && hasExplosives) ||
+        (canUseLightArrows && inventory.maskZora)),
+    sttUnderWater:
+      hasStoneTowerTempleAccess && canUseLightArrows && inventory.maskZora,
+    sttBridgeCrystal:
+      hasStoneTowerTempleAccess &&
+      canUseLightArrows &&
+      (inventory.maskZora ||
+        (inventory.maskGoron && inventory.maskDeku && hasExplosives)),
+    sttMirrorSunSwitch:
+      hasStoneTowerTempleAccess &&
+      (canUseLightArrows ||
+        (inventory.maskGoron &&
+          hasExplosives &&
+          inventory.maskZora &&
+          inventory.mirrorShield)),
+    sttMirrorSunBlock:
+      hasStoneTowerTempleAccess &&
+      (canUseLightArrows ||
+        (inventory.maskGoron &&
+          hasExplosives &&
+          inventory.maskZora &&
+          inventory.mirrorShield)),
+    sttLavaRoomLedge:
+      hasStoneTowerTempleAccess &&
+      inventory.maskDeku &&
+      (canUseLightArrows ||
+        (inventory.maskGoron &&
+          hasExplosives &&
+          inventory.maskZora &&
+          inventory.mirrorShield)),
+    sttThinBridge:
+      (hasStoneTowerTempleAccess &&
+        hasExplosives &&
+        (canUseLightArrows ||
+          (inventory.maskGoron &&
+            inventory.mirrorShield &&
+            inventory.maskZora &&
+            inventory.maskDeku))) ||
+      (hasInvertedStoneTowerAccess && inventory.maskDeku),
+    sttEyegore:
+      hasStoneTowerTempleAccess &&
+      (canUseLightArrows ||
+        (inventory.maskGoron &&
+          hasExplosives &&
+          inventory.maskZora &&
+          inventory.mirrorShield &&
+          inventory.maskDeku)),
     sttArmos:
       hasStoneTowerTempleAccess &&
       (((inventory.mirrorShield || canUseLightArrows) &&
         hasExplosives &&
         inventory.maskGoron) ||
         (canUseLightArrows && inventory.maskZora)),
-    sttGaroMaster:
+    sttLightArrow:
       hasStoneTowerTempleAccess &&
       (canUseLightArrows ||
         (inventory.maskDeku &&
@@ -459,10 +575,22 @@ export const getLogic = (inventory: Partial<InventoryItems>) => {
           hasExplosives)),
 
     // Inverted Stone Tower Temple
-    isttUpdraft: hasInvertedStoneTowerAccess && inventory.maskDeku,
+    isttUpdraftRoom: hasInvertedStoneTowerAccess && inventory.maskDeku,
+    isttUpdraftFrozenEye:
+      hasInvertedStoneTowerAccess && inventory.maskDeku && canUseFireArrows,
+    isttEntranceSun: hasInvertedStoneTowerAccess,
+    isttWizzrobe: hasInvertedStoneTowerAccess && inventory.maskDeku,
     isttGiantMask: hasInvertedStoneTowerAccess && inventory.maskDeku,
     isttDeathArmos: hasInvertedStoneTowerAccess && inventory.maskDeku,
-    isttTwinmold: canClearStoneTowerTemple,
-    songSttBBW: canClearStoneTowerTemple,
+    isttBossKey: hasInvertedStoneTowerAccess && inventory.maskDeku,
+    isttTwinmoldHeartContainer: canClearStoneTowerTemple,
+    songSttBossBlueWarp: canClearStoneTowerTemple,
+
+    // SecretShrine
+    shrineDinolfos: hasShrineAccess,
+    shrineGaroMaster: hasShrineAccess,
+    shrineWizzrobe: hasShrineAccess,
+    shrineWart: hasShrineAccess,
+    shrineClear: hasShrineAccess,
   };
 };

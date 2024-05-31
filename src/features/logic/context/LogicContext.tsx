@@ -19,6 +19,7 @@ export const LogicProvider = ({ children }: LogicProviderProps) => {
   const [logic, setLogic] = React.useState({});
 
   React.useEffect(() => {
+    // @ts-expect-error inventory is not Partial<InventoryItems> from accumulator
     setLogic(getLogic(inventory));
   }, [inventory]);
 

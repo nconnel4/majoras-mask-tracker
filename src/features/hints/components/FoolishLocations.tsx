@@ -3,7 +3,7 @@ import { RegionSelect } from "../components/RegionSelect.tsx";
 export const FoolishLocations = () => {
   return (
     <>
-      <div className="hint">
+      <div className="hint hint-foolish">
         <h3>Foolish</h3>
         <ol>
           <li>

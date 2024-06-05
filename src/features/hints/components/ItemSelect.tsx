@@ -8,7 +8,6 @@ export const ItemSelect = ({ name }: ItemSelectProps) => {
   return (
     <select name={name}>
       <option>-</option>
-      <option>dead</option>
       {Object.keys(items)
         .sort((a: string, b: string) =>
           items[a as keyof Items].name < items[b as keyof Items].name

@@ -275,13 +275,21 @@ export const checks: Checks = {
   // Great Bay Coast
   coastGrotto: { name: "Coast Grotto", region: "gbc" },
   coastLedge: { name: "Coast Ledge", region: "gbc" },
-  coastMapBay: { name: "Great Bay Map Purchase", region: "gbc" },
+  coastMapBay: {
+    name: "Great Bay Map Purchase",
+    region: "gbc",
+    linkedChecks: ["milkRoadMapBay"],
+  },
   fishermanGame: { name: "Fisherman's Game", region: "gbc" },
   labFish: { name: "Lab Fish", region: "gbc" },
   mikau: { name: "Mikau", region: "gbc" },
   oceanSpiderChest: { name: "Ocean Spider House Chest", region: "gbc" },
   oceanSpider: { name: "Ocean Spider House Day 1 Reward", region: "gbc" },
-  coastMapCanyon: { name: "Stone Tower Map Purchase", region: "gbc" },
+  coastMapCanyon: {
+    name: "Stone Tower Map Purchase",
+    region: "gbc",
+    linkedChecks: ["canyonMapStoneTower"],
+  },
   songZoraEggs: { name: "Zora Eggs", region: "gbc" },
 
   // Zora Cape
@@ -390,9 +398,9 @@ export const checks: Checks = {
   },
 
   // Beneath the Well
-  mirrorShieldChest: { name: "Mirror Shield Chest", region: "wel" },
-  leftWell: { name: "Well Left Path Chest", region: "wel" },
-  rightWell: { name: "Well Right Path Chest", region: "wel" },
+  mirrorShieldChest: { name: "Mirror Shield Chest", region: "well" },
+  leftWell: { name: "Well Left Path Chest", region: "well" },
+  rightWell: { name: "Well Right Path Chest", region: "well" },
 
   // Ikana Castle
   castlePillar: { name: "Ikana Castle Pillar", region: "cas" },

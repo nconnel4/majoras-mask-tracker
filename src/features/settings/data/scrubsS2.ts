@@ -267,6 +267,11 @@ export const scrubsS2Settings: Setting = {
     "secretShrineGrotto",
     "canyonMapStoneTower",
 
+    // Beneath the Well
+    "leftWell",
+    "rightWell",
+    "mirrorShieldChest",
+
     // Ikana Castle
     "castlePillar",
     "songIgos",

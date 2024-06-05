@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [v1.0.2]
+
+### Fixed
+- Fix incorrect region for Beneath the Well checks
+- Fix linking on Great Bay Tingle checks
+
 ## [v1.0.1]
 
 ### Fixed

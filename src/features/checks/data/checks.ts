@@ -301,7 +301,7 @@ export const checks: Checks = {
   capeUnderwaterChest: { name: "Zora Cape Underwater Chest", region: "zc" },
 
   // Zora Hall
-  evan: { name: "Evan", region: "zh" },
+  evan: { name: "Evan ( > > v A A v > A < < > v v > < v)", region: "zh" },
   luluLedge: { name: "Lulu's Room Ledge", region: "zh" },
   mountainTitleDeed: { name: "Ocean Scrub Trade", region: "zh" },
   stageLights: { name: "Stage Lights", region: "zh" },

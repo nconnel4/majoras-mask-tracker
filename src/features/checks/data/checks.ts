@@ -229,7 +229,7 @@ export const checks: Checks = {
   shtBridge: { name: "Snowhead Bridge Room Chest", region: "sht" },
   shtMap: { name: "Snowhead Map Chest", region: "sht" },
   shtMapLedge: { name: "Snowhead Map Room Ledge", region: "sht" },
-  shtCompass: { name: "snowhead Compass Chest", region: "sht" },
+  shtCompass: { name: "Snowhead Compass Chest", region: "sht" },
   shtIcePuzzle: { name: "Snowhead Ice Puzzle", region: "sht" },
   shtTwinLower: { name: "Snowhead Twin Block Lower", region: "sht" },
   shtTwinUpper: { name: "Snowhead Twin Block Upper", region: "sht" },

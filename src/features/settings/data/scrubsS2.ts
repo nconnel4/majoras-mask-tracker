@@ -119,6 +119,7 @@ export const scrubsS2Settings: Setting = {
     "wftMap",
     "wftCompass",
     "wftHeroBow",
+    "wftMainRoomSwitch",
     "wftBossKey",
     "wftOdolwaHeart",
     "songWftBossBlueWarp",

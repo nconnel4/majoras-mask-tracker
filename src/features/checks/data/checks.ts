@@ -229,7 +229,7 @@ export const checks: Checks = {
   shtBridge: { name: "Snowhead Bridge Room Chest", region: "sht" },
   shtMap: { name: "Snowhead Map Chest", region: "sht" },
   shtMapLedge: { name: "Snowhead Map Room Ledge", region: "sht" },
-  shtCompass: { name: "snowhead Compass Chest", region: "sht" },
+  shtCompass: { name: "Snowhead Compass Chest", region: "sht" },
   shtIcePuzzle: { name: "Snowhead Ice Puzzle", region: "sht" },
   shtTwinLower: { name: "Snowhead Twin Block Lower", region: "sht" },
   shtTwinUpper: { name: "Snowhead Twin Block Upper", region: "sht" },
@@ -301,7 +301,7 @@ export const checks: Checks = {
   capeUnderwaterChest: { name: "Zora Cape Underwater Chest", region: "zc" },
 
   // Zora Hall
-  evan: { name: "Evan", region: "zh" },
+  evan: { name: "Evan ( > > v A A v > A < < > v v > < v)", region: "zh" },
   luluLedge: { name: "Lulu's Room Ledge", region: "zh" },
   mountainTitleDeed: { name: "Ocean Scrub Trade", region: "zh" },
   stageLights: { name: "Stage Lights", region: "zh" },

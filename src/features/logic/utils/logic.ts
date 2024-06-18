@@ -272,8 +272,8 @@ export const getLogic = (inventory: InventoryItems): Logic => {
     hotSpringGrotto: hasNorthAccess && canMeltIce && hasExplosives,
     northMapRanch: hasNorthAccess && hasProjectile,
     northMapSnowhead: hasNorthAccess && hasProjectile,
-    springRamp: canClearSnowhead,
-    springCave: canClearSnowhead,
+    springRamp: canClearSnowhead && inventory.maskZora,
+    springCave: canClearSnowhead && inventory.maskZora,
     goronRace: canClearSnowhead,
 
     // Goron Village

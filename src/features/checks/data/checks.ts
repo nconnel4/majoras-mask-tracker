@@ -261,7 +261,7 @@ export const checks: Checks = {
   milkRoadMapBay: {
     name: "Great Bay Map Purchase",
     region: "mr",
-    linkedChecks: ["milkRoadMapBay"],
+    linkedChecks: ["coastMapBay"],
   },
 
   // Romani Ranch
